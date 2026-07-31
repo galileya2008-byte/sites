@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# https://expert-sites.ru/
+Sitemap: https://expert-sites.ru/sitemap.xml

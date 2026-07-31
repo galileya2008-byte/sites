@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Neiro Galina  @07@01>B:0 A09B>2 4;O M:A?5@B>2">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06152F"/>
+      <stop offset="100%" stop-color="#0a2247"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <text x="80" y="280" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700">!09B, :>B>@K9 ?@>40QB</text>
+  <text x="80" y="350" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700">20H8 CA;C38</text>
+  <text x="80" y="430" fill="#60a5fa" font-family="Segoe UI, Arial, sans-serif" font-size="28">!09B-2878B:0 >B 15 000 ½ · >;=K9 A09B >B 30 000 ½</text>
+  <text x="80" y="540" fill="rgba(248,250,252,0.65)" font-family="Segoe UI, Arial, sans-serif" font-size="22">Neiro Galina · neirogalina.ru</text>
+</svg>
