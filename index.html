@@ -1000,6 +1000,43 @@
       background: var(--accent-bright);
     }
 
+    .ng-contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin: 1.25rem 0 1.5rem;
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius-sm);
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(96, 165, 250, 0.22);
+    }
+
+    .ng-contact-channels a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-bright);
+      text-decoration: none;
+      font-size: 1.0625rem;
+      font-weight: 600;
+    }
+
+    .ng-contact-channels a:hover {
+      color: #93c5fd;
+    }
+
+    .ng-contact-channels a svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .ng-contact-channels span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
     .ng-form-panel {
       padding: 2rem;
     }
@@ -1550,7 +1587,18 @@
           <aside class="ng-contact-aside ng-glass">
             <h3>Галина Оноприенко</h3>
             <p>Разработка сайтов для экспертов и онлайн-школ: от визитки до полноценного ресурса с SEO и интерактивом.</p>
-            <p>После заявки свяжусь с вами удобным способом — обычно в течение рабочего дня.</p>
+            <div class="ng-contact-channels">
+              <span>Быстрая связь:</span>
+              <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Telegram @galina1901
+              </a>
+              <a href="mailto:galileya2008@yandex.ru">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+                galileya2008@yandex.ru
+              </a>
+            </div>
+            <p>После заявки через форму свяжусь с вами — обычно в течение рабочего дня.</p>
             <ul>
               <li>Бесплатная первичная консультация по структуре сайта</li>
               <li>Подбор тарифа: визитка или полный сайт</li>
@@ -1558,9 +1606,8 @@
               <li>Подарок: интерактив при заказе до 12 августа</li>
             </ul>
           </aside>
-          <!-- Замените data-form-email на ваш email для получения заявок (FormSubmit) -->
           <div class="ng-form-panel ng-glass">
-            <form class="ng-form-grid" id="ng-contact-form" data-form-email="galina@neirogalina.ru" novalidate>
+            <form class="ng-form-grid" id="ng-contact-form" data-form-email="galileya2008@yandex.ru" novalidate>
               <div class="ng-form-row-2">
                 <div class="ng-field">
                   <label for="ng-name">Имя</label>
@@ -1595,7 +1642,7 @@
               </label>
               <button type="submit" class="ng-btn ng-btn--primary ng-form-submit">Отправить заявку</button>
               <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status">Спасибо! Заявка отправлена — скоро свяжусь с вами.</p>
-              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Не удалось отправить. Напишите напрямую через <a href="https://neirogalina.ru/" style="color:inherit">neirogalina.ru</a>.</p>
+              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Не удалось отправить. Напишите в <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer" style="color:inherit">Telegram @galina1901</a> или на <a href="mailto:galileya2008@yandex.ru" style="color:inherit">galileya2008@yandex.ru</a>.</p>
             </form>
           </div>
         </div>
@@ -1626,6 +1673,7 @@
 
     <footer class="ng-footer-note">
       <a href="https://neirogalina.ru/" style="color: inherit;">neirogalina.ru</a>
+      · <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer" style="color: inherit;">Telegram @galina1901</a>
       · Разработка сайтов для экспертов · Срок изготовления 3–12 дней
     </footer>
   </div>
