@@ -59,7 +59,9 @@ git push
 
 Ресурс **https://expert-sites.ru/** → sitemap `https://expert-sites.ru/sitemap.xml`
 
-### Яндекс.Метрика
+### Форма «Обсудить проект»
+
+Заявки отправляются через [FormSubmit](https://formsubmit.co). В `index.html` у формы `#ng-contact-form` укажите ваш email в атрибуте `data-form-email`. При первой заявке FormSubmit пришлёт письмо с подтверждением — его нужно принять один раз.
 
 Код счётчика — перед `</body>` в `index.html`.
 

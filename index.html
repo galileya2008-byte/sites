@@ -413,6 +413,19 @@
       box-shadow: 0 0 32px var(--cyan-glow);
     }
 
+    .ng-btn--ghost {
+      color: var(--text-secondary);
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .ng-btn--ghost:hover {
+      transform: translateY(-2px);
+      color: var(--text-primary);
+      border-color: rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
     .ng-btn--block {
       width: 100%;
     }
@@ -896,6 +909,217 @@
       color: var(--text-muted);
     }
 
+    /* Why experts need a site */
+    .ng-expert-intro {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .ng-expert-intro p {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      margin-bottom: 1rem;
+    }
+
+    .ng-expert-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .ng-expert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .ng-expert-card {
+      padding: 1.5rem 1.65rem;
+    }
+
+    .ng-expert-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .ng-expert-card p {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+    }
+
+    /* Contact form */
+    .ng-contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .ng-contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ng-contact-aside {
+      padding: 2rem;
+    }
+
+    .ng-contact-aside h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .ng-contact-aside p {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      margin-bottom: 1rem;
+    }
+
+    .ng-contact-aside ul {
+      list-style: none;
+      margin-top: 1.25rem;
+    }
+
+    .ng-contact-aside li {
+      position: relative;
+      padding-left: 1.15rem;
+      margin-bottom: 0.65rem;
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+    }
+
+    .ng-contact-aside li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-bright);
+    }
+
+    .ng-form-panel {
+      padding: 2rem;
+    }
+
+    .ng-form-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .ng-form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 560px) {
+      .ng-form-row-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ng-field label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-primary);
+    }
+
+    .ng-field input,
+    .ng-field textarea,
+    .ng-field select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 1.0625rem;
+      font-family: var(--font);
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-sm);
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .ng-field input:focus,
+    .ng-field textarea:focus,
+    .ng-field select:focus {
+      outline: none;
+      border-color: rgba(96, 165, 250, 0.55);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .ng-field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .ng-field-hint {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .ng-form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .ng-form-consent input {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+      accent-color: var(--accent);
+    }
+
+    .ng-form-consent a {
+      color: var(--accent-bright);
+    }
+
+    .ng-form-submit {
+      width: 100%;
+      margin-top: 0.5rem;
+      border: none;
+      font-family: var(--font);
+    }
+
+    .ng-form-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .ng-form-msg {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      display: none;
+    }
+
+    .ng-form-msg.is-visible {
+      display: block;
+    }
+
+    .ng-form-msg--ok {
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #a7f3d0;
+    }
+
+    .ng-form-msg--err {
+      background: rgba(248, 113, 113, 0.12);
+      border: 1px solid rgba(248, 113, 113, 0.35);
+      color: #fecaca;
+    }
+
     /* Reveal animation */
     .ng-reveal {
       opacity: 0;
@@ -956,6 +1180,10 @@
             </svg>
             Полноценный сайт
           </a>
+          <a class="ng-btn ng-btn--ghost" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Обсудить проект
+          </a>
         </div>
         <div class="ng-deadline ng-glass">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" aria-hidden="true">
@@ -975,6 +1203,57 @@
     </header>
 
     <main id="main-content">
+    <section class="ng-section ng-reveal" id="why-expert" aria-labelledby="why-expert-title">
+      <div class="ng-container">
+        <div class="ng-section-header">
+          <div class="ng-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Для экспертов
+          </div>
+          <h2 class="ng-h2" id="why-expert-title">Зачем эксперту свой сайт, а не только соцсети</h2>
+          <p class="ng-sub">Профиль в Instagram или Telegram — канал трафика. Сайт — ваш актив, который продаёт и остаётся с вами.</p>
+        </div>
+        <div class="ng-expert-intro ng-glass">
+          <p>Клиенты ищут специалиста в Яндексе, читают отзывы, сравнивают предложения. Если у вас нет собственной площадки, решение принимают по обрывкам сторис и случайным постам — вы теряете тех, кто готов платить за экспертизу.</p>
+          <p>Сайт собирает доверие в одном месте: кто вы, чем помогаете, сколько стоит, как записаться. Это влияет и на конверсию из рекламы, и на органический трафик — роботы поисковиков индексируют именно страницы сайта, а не ленту соцсети.</p>
+        </div>
+        <div class="ng-expert-grid">
+          <article class="ng-expert-card ng-glass">
+            <h3>Вы владеете площадкой</h3>
+            <p>Алгоритмы, блокировки и правила площадок меняются. Домен и сайт — ваши: контент, структура и база заявок под вашим контролем.</p>
+          </article>
+          <article class="ng-expert-card ng-glass">
+            <h3>Выше доверие и чек</h3>
+            <p>Оформленный сайт уровня premium SaaS выглядит как серьёзная практика, а не «ещё один блог». Клиенты охотнее покупают дорогие программы и консультации.</p>
+          </article>
+          <article class="ng-expert-card ng-glass">
+            <h3>Яндекс и Google находят вас</h3>
+            <p>Запросы вроде «психолог онлайн», «наставник по продажам», «нутрициолог запись» ведут на сайты. Без страниц под SEO вы почти не участвуете в этой выдаче.</p>
+          </article>
+          <article class="ng-expert-card ng-glass">
+            <h3>Воронка без хаоса</h3>
+            <p>На сайте вы ведёте человека по шагам: боль → решение → формат работы → заявка. В соцсетях этот путь размазан по десяткам публикаций.</p>
+          </article>
+          <article class="ng-expert-card ng-glass">
+            <h3>Работает 24/7</h3>
+            <p>Пока вы спите или ведёте клиента, сайт отвечает на вопросы, показывает кейсы и принимает заявки — без вашего участия в каждом диалоге.</p>
+          </article>
+          <article class="ng-expert-card ng-glass">
+            <h3>Интерактив и SEO</h3>
+            <p>Квизы, калькуляторы, мини-игры удерживают внимание и дают поведенческие сигналы для поиска. До 12 августа добавим интерактив в подарок при заказе.</p>
+          </article>
+          <article class="ng-expert-card ng-glass">
+            <h3>Реклама окупается лучше</h3>
+            <p>Трафик с Директа и таргета на «живую» посадочную с чётким оффером стоит дешевле в заявку, чем ссылка «в профиль», где человек теряется.</p>
+          </article>
+          <article class="ng-expert-card ng-glass">
+            <h3>Масштаб экспертности</h3>
+            <p>Статьи, программы, несколько услуг, юридические страницы — на сайте это выглядит системно. Эксперт с сайтом воспринимается как бренд, а не разовый аккаунт.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="ng-section ng-reveal" id="benefits" aria-labelledby="benefits-title">
       <div class="ng-container">
         <div class="ng-section-header">
@@ -1257,12 +1536,79 @@
       </div>
     </section>
 
+    <section class="ng-section ng-reveal" id="contact" aria-labelledby="contact-title">
+      <div class="ng-container">
+        <div class="ng-section-header">
+          <div class="ng-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            Связь
+          </div>
+          <h2 class="ng-h2" id="contact-title">Обсудим ваш проект</h2>
+          <p class="ng-sub">Расскажите о нише и задаче — предложу формат сайта, сроки и что можно улучшить уже на старте.</p>
+        </div>
+        <div class="ng-contact-layout">
+          <aside class="ng-contact-aside ng-glass">
+            <h3>Галина Оноприенко</h3>
+            <p>Разработка сайтов для экспертов и онлайн-школ: от визитки до полноценного ресурса с SEO и интерактивом.</p>
+            <p>После заявки свяжусь с вами удобным способом — обычно в течение рабочего дня.</p>
+            <ul>
+              <li>Бесплатная первичная консультация по структуре сайта</li>
+              <li>Подбор тарифа: визитка или полный сайт</li>
+              <li>Срок изготовления 3–12 дней</li>
+              <li>Подарок: интерактив при заказе до 12 августа</li>
+            </ul>
+          </aside>
+          <!-- Замените data-form-email на ваш email для получения заявок (FormSubmit) -->
+          <div class="ng-form-panel ng-glass">
+            <form class="ng-form-grid" id="ng-contact-form" data-form-email="galina@neirogalina.ru" novalidate>
+              <div class="ng-form-row-2">
+                <div class="ng-field">
+                  <label for="ng-name">Имя</label>
+                  <input type="text" id="ng-name" name="name" autocomplete="name" required placeholder="Как к вам обращаться">
+                </div>
+                <div class="ng-field">
+                  <label for="ng-phone">Телефон или Telegram</label>
+                  <input type="text" id="ng-phone" name="contact" autocomplete="tel" required placeholder="+7 … или @username">
+                </div>
+              </div>
+              <div class="ng-field">
+                <label for="ng-email">Email</label>
+                <input type="email" id="ng-email" name="email" autocomplete="email" required placeholder="Для ответа и материалов">
+              </div>
+              <div class="ng-field">
+                <label for="ng-format">Интересует</label>
+                <select id="ng-format" name="format">
+                  <option value="Не выбрано">Выберите вариант</option>
+                  <option value="Сайт-визитка">Сайт-визитка (25 000 ₽)</option>
+                  <option value="Полноценный сайт">Полноценный сайт (50 000 ₽)</option>
+                  <option value="Пока не знаю">Пока не знаю — нужна консультация</option>
+                </select>
+              </div>
+              <div class="ng-field">
+                <label for="ng-message">О проекте</label>
+                <textarea id="ng-message" name="message" required placeholder="Ниша, услуги, есть ли логотип/тексты, желаемые сроки…"></textarea>
+                <p class="ng-field-hint">Чем подробнее — тем точнее смогу оценить объём и срок.</p>
+              </div>
+              <label class="ng-form-consent">
+                <input type="checkbox" name="consent" id="ng-consent" required value="yes">
+                <span>Даю согласие на обработку персональных данных в соответствии с политикой на <a href="https://neirogalina.ru/" target="_blank" rel="noopener noreferrer">neirogalina.ru</a></span>
+              </label>
+              <button type="submit" class="ng-btn ng-btn--primary ng-form-submit">Отправить заявку</button>
+              <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status">Спасибо! Заявка отправлена — скоро свяжусь с вами.</p>
+              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Не удалось отправить. Напишите напрямую через <a href="https://neirogalina.ru/" style="color:inherit">neirogalina.ru</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="ng-section ng-cta ng-reveal" id="order">
       <div class="ng-container">
         <div class="ng-cta-box ng-glass">
           <h2 class="ng-h2">Закажите сайт под ваши задачи</h2>
           <p class="ng-lead">Выберите формат и перейдите к оформлению. До 12 августа — интерактив на сайт в подарок.</p>
           <div class="ng-btn-row">
+            <a class="ng-btn ng-btn--ghost" href="#contact">Обсудить проект</a>
             <a class="ng-btn ng-btn--primary" href="https://neirogalina.ru/visitka" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
               Сайт-визитка — 25 000 ₽
@@ -1304,6 +1650,63 @@
         { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
       );
       reveals.forEach(function (el) { observer.observe(el); });
+    })();
+
+    (function () {
+      var form = document.getElementById("ng-contact-form");
+      if (!form) return;
+      var ok = document.getElementById("ng-form-ok");
+      var err = document.getElementById("ng-form-err");
+      var btn = form.querySelector(".ng-form-submit");
+
+      function hideMsgs() {
+        if (ok) ok.classList.remove("is-visible");
+        if (err) err.classList.remove("is-visible");
+      }
+
+      if (window.location.search.indexOf("sent=1") !== -1 && ok) {
+        ok.classList.add("is-visible");
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        hideMsgs();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        var email = (form.getAttribute("data-form-email") || "").trim();
+        if (!email || email.indexOf("@") < 1) {
+          if (err) err.classList.add("is-visible");
+          return;
+        }
+        var fd = new FormData(form);
+        fd.append("_subject", "Заявка с expert-sites.ru — обсудить проект");
+        fd.append("_captcha", "false");
+        fd.append("_template", "table");
+        if (btn) btn.disabled = true;
+        fetch("https://formsubmit.co/ajax/" + email, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: fd
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (data && data.success) {
+              form.reset();
+              if (ok) ok.classList.add("is-visible");
+              if (window.history && window.history.replaceState) {
+                window.history.replaceState({}, "", window.location.pathname + "#contact");
+              }
+            } else if (err) err.classList.add("is-visible");
+          })
+          .catch(function () {
+            if (err) err.classList.add("is-visible");
+          })
+          .finally(function () {
+            if (btn) btn.disabled = false;
+          });
+      });
     })();
   </script>
 </body>
