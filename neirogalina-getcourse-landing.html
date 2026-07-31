@@ -1157,6 +1157,128 @@
       color: #fecaca;
     }
 
+    /* Sticky nav */
+    .ng-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6, 21, 47, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .ng-nav-inner {
+      width: min(1120px, 100% - 1.25rem);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      min-height: 3.25rem;
+    }
+
+    .ng-nav-brand {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 0.35rem 0;
+    }
+
+    .ng-nav-brand span {
+      color: var(--accent-bright);
+    }
+
+    .ng-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      flex: 1;
+      justify-content: flex-end;
+      padding: 0.15rem 0;
+    }
+
+    .ng-nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ng-nav-links a {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: color 0.25s, background 0.25s;
+    }
+
+    .ng-nav-links a:hover,
+    .ng-nav-links a:focus-visible {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.08);
+      outline: none;
+    }
+
+    .ng-nav-links a.is-active {
+      color: var(--accent-bright);
+      background: rgba(59, 130, 246, 0.18);
+    }
+
+    .ng-nav-cta {
+      flex-shrink: 0;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      box-shadow: 0 0 16px var(--accent-glow);
+      white-space: nowrap;
+    }
+
+    .ng-nav-cta:hover {
+      filter: brightness(1.08);
+    }
+
+    @media (min-width: 768px) {
+      .ng-nav-links a {
+        font-size: 0.9375rem;
+        padding: 0.5rem 0.95rem;
+      }
+
+      .ng-nav-brand {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ng-nav-cta {
+        display: none;
+      }
+
+      .ng-nav-brand {
+        font-size: 0.8125rem;
+        max-width: 7.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .ng-section[id],
+    .ng-hero {
+      scroll-margin-top: 4.25rem;
+    }
+
     /* Reveal animation */
     .ng-reveal {
       opacity: 0;
@@ -1193,6 +1315,21 @@
       <div class="ng-wave ng-wave--4"></div>
     </div>
     <div class="ng-grid-overlay" aria-hidden="true"></div>
+
+    <nav class="ng-nav" aria-label="Навигация по странице">
+      <div class="ng-nav-inner">
+        <a class="ng-nav-brand" href="#">Expert <span>Sites</span></a>
+        <div class="ng-nav-links" role="list">
+          <a href="#why-expert" data-nav="why-expert">Зачем сайт</a>
+          <a href="#pricing" data-nav="pricing">Тарифы</a>
+          <a href="#included" data-nav="included">Состав</a>
+          <a href="#roi" data-nav="roi">Окупаемость</a>
+          <a href="#seo-legal" data-nav="seo-legal">SEO</a>
+          <a href="#contact" data-nav="contact">Контакты</a>
+        </div>
+        <a class="ng-nav-cta" href="#contact">Обсудить</a>
+      </div>
+    </nav>
 
     <header class="ng-hero ng-section">
       <div class="ng-container">
@@ -1755,6 +1892,31 @@
             if (btn) btn.disabled = false;
           });
       });
+    })();
+
+    (function () {
+      var links = document.querySelectorAll(".ng-nav-links a[data-nav]");
+      if (!links.length || !("IntersectionObserver" in window)) return;
+      var byId = {};
+      links.forEach(function (a) {
+        byId[a.getAttribute("data-nav")] = a;
+      });
+      var sections = ["why-expert", "pricing", "included", "roi", "seo-legal", "contact"].map(function (id) {
+        return document.getElementById(id);
+      }).filter(Boolean);
+      if (!sections.length) return;
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            links.forEach(function (a) { a.classList.remove("is-active"); });
+            if (byId[id]) byId[id].classList.add("is-active");
+          });
+        },
+        { root: null, rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+      );
+      sections.forEach(function (el) { observer.observe(el); });
     })();
   </script>
 </body>
