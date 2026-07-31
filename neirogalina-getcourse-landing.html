@@ -485,6 +485,55 @@
       font-weight: 600;
     }
 
+    .ng-gift-promo {
+      margin-top: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      max-width: 720px;
+      margin-inline: auto;
+      border-color: rgba(52, 211, 153, 0.35);
+      background: rgba(52, 211, 153, 0.08);
+    }
+
+    .ng-gift-promo-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .ng-gift-promo-head svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      color: #34d399;
+      margin-top: 0.15rem;
+    }
+
+    .ng-gift-promo-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    .ng-gift-promo-title strong {
+      color: #6ee7b7;
+    }
+
+    .ng-gift-promo p {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      padding-left: 2.625rem;
+    }
+
+    @media (max-width: 520px) {
+      .ng-gift-promo p {
+        padding-left: 0;
+      }
+    }
+
     .ng-price-term {
       font-size: 1.0625rem;
       color: var(--text-secondary);
@@ -915,6 +964,13 @@
           </svg>
           <span>Срок изготовления: <strong>3–12 дней</strong> — в зависимости от тарифа и объёма согласований</span>
         </div>
+        <div class="ng-gift-promo ng-glass" style="animation: ng-fade-up 0.8s var(--ease-out) 0.55s both;">
+          <div class="ng-gift-promo-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            <div class="ng-gift-promo-title">При заказе до <strong>12 августа</strong> — интерактив / геймификация на ваш сайт <strong>в подарок</strong>!</div>
+          </div>
+          <p>Интерактив помогает лучше прогреть аудиторию под ваши услуги и улучшить положение сайта в поисковой выдаче.</p>
+        </div>
       </div>
     </header>
 
@@ -984,7 +1040,7 @@
             Тарифы
           </div>
           <h2 class="ng-h2">Сравнение двух форматов</h2>
-          <p class="ng-sub">Выберите объём под вашу задачу. Прозрачная стоимость и срок изготовления 3–12 дней.</p>
+          <p class="ng-sub">Выберите объём под вашу задачу. При заказе до 12 августа — интерактив на сайт в подарок.</p>
         </div>
         <div class="ng-pricing-grid">
           <article class="ng-price-card ng-glass">
@@ -1036,7 +1092,7 @@
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                Формы, аналитика, подключение к GetCourse
+                Формы заявок, аналитика и нужные интеграции
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1117,8 +1173,8 @@
               <li>
                 <svg class="ng-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
-                  <strong>Совместимость с GetCourse</strong>
-                  HTML-блоки и посадочные страницы без конфликтов со стилями платформы.
+                  <strong>Интерактив и геймификация</strong>
+                  Вовлекающие элементы на сайте — прогрев аудитории и дополнительные сигналы для SEO. При заказе до 12 августа — в подарок.
                 </div>
               </li>
               <li>
@@ -1205,7 +1261,7 @@
       <div class="ng-container">
         <div class="ng-cta-box ng-glass">
           <h2 class="ng-h2">Закажите сайт под ваши задачи</h2>
-          <p class="ng-lead">Выберите формат и перейдите к оформлению. Изготовление — от 3 до 12 дней.</p>
+          <p class="ng-lead">Выберите формат и перейдите к оформлению. До 12 августа — интерактив на сайт в подарок.</p>
           <div class="ng-btn-row">
             <a class="ng-btn ng-btn--primary" href="https://neirogalina.ru/visitka" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
