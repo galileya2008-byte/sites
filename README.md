@@ -33,7 +33,66 @@ git push
 
 В репозитории: **Settings → Pages** — branch **main**, root **/**. В **Custom domain** указано `expert-sites.ru`, в корне лежит файл `CNAME`.
 
-## Ссылки на оплату
+## HTTPS / SSL (GitHub Pages + REG.RU)
+
+Платный сертификат **не нужен**: GitHub сам выпускает Let's Encrypt для вашего домена, если DNS и настройки Pages в порядке.
+
+### Что видно сейчас (диагностика)
+
+| Проверка | Результат |
+|----------|-----------|
+| `http://expert-sites.ru/` | Работает, ответ **GitHub.com** |
+| `https://expert-sites.ru/` | Сертификат **не на домен** (`SEC_E_WRONG_PRINCIPAL` — часто показывается сертификат `*.github.io`) |
+| DNS `@` (A) | Четыре IP GitHub Pages — **верно** |
+| DNS `www` (CNAME) | `galileya2008-byte.github.io` — **верно** |
+| CAA | `letsencrypt.org` — **можно выпускать сертификат** |
+
+Итог: сайт на GitHub уже открывается по **HTTP**, но **TLS для `expert-sites.ru` GitHub ещё не выдал** (или домен в Pages нужно перепривязать). Подтверждение сайта в **Яндекс.Вебмастере** на SSL **не влияет**.
+
+### Шаг 1 — GitHub (главное)
+
+1. Откройте [Settings → Pages](https://github.com/galileya2008-byte/sites/settings/pages) репозитория **sites**.
+2. **Build and deployment:** Source = **Deploy from a branch**, Branch = **main** / **/(root)**.
+3. **Custom domain:** введите **`expert-sites.ru`** (без `https://`, без `/`) → **Save**.
+4. Дождитесь **зелёной галочки** «DNS check successful» рядом с доменом.
+5. Если галочки нет или HTTPS долго «висит»:
+   - нажмите **Remove** у домена;
+   - подождите **10–15 минут**;
+   - снова введите `expert-sites.ru` → **Save** (так часто «зависает» выпуск сертификата — см. [документацию GitHub](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages#https-errors)).
+6. Когда сертификат готов, включите **Enforce HTTPS** (чекбокс станет активным).
+7. Если GitHub пишет, что домен **already in use** — он привязан к **другому** репозиторию; сначала снимите домен там.
+
+Файл `CNAME` в репозитории должен содержать одну строку: `expert-sites.ru` (как сейчас).
+
+### Шаг 2 — REG.RU (DNS)
+
+В панели REG.RU для **expert-sites.ru** оставьте **только** такую схему (лишнее удалите):
+
+| Имя / хост | Тип | Значение |
+|------------|-----|----------|
+| `@` | **A** | `185.199.108.153` |
+| `@` | **A** | `185.199.109.153` |
+| `@` | **A** | `185.199.110.153` |
+| `@` | **A** | `185.199.111.153` |
+| `www` | **CNAME** | `galileya2008-byte.github.io.` (с точкой в конце — если REG.RU просит) |
+
+**Отключите** на REG.RU:
+
+- переадресацию / «веб-перенаправление» с `@` или `www` на другой URL;
+- лишние **A** / **AAAA** / **CNAME** на `@` (на `@` не должно быть CNAME);
+- парковку домена.
+
+Запись **TXT** (GlobalSign и т.п.) можно оставить — на GitHub она не мешает.
+
+### Шаг 3 — после успешного HTTPS
+
+- Основной адрес сайта: **https://expert-sites.ru/** (без `www` или настройте редирект `www` → apex в REG.RU **только после** того, как оба адреса открываются по HTTPS).
+- В Яндекс.Вебмастере укажите HTTPS-версию и переобход главной.
+
+Ожидание: после успешного DNS check сертификат обычно появляется **от 15 минут до 24 часов**. Пока HTTPS не работает, для проверки контента можно открывать **http://expert-sites.ru/** (без замка).
+
+Подробнее: [Securing your GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
+
 
 - Сайт-визитка: https://neirogalina.ru/visitka  
 - Полноценный сайт: https://neirogalina.ru/siteone  
