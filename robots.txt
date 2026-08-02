@@ -8,4 +8,6 @@ User-agent: Googlebot
 Allow: /
 
 # https://expert-sites.ru/
+Host: expert-sites.ru
+
 Sitemap: https://expert-sites.ru/sitemap.xml

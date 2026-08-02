@@ -52,8 +52,10 @@ git push
 
 1. [webmaster.yandex.ru](https://webmaster.yandex.ru/) → добавить **https://expert-sites.ru/**
 2. Подтверждение — meta-тег в `<head>` (`yandex-verification`)
-3. Sitemap: `https://expert-sites.ru/sitemap.xml`
-4. Переобход главной после обновления SEO
+3. Sitemap: **Индексирование → Файлы Sitemap** → добавить `https://expert-sites.ru/sitemap.xml` (дополнительно указан в `robots.txt` и `<link rel="sitemap">` в `index.html`)
+4. Регион: **Настройки → Регион сайта** → выберите **Россия** (или ваш город, если работаете локально). На странице также указаны `addressCountry` и `areaServed` в JSON-LD.
+5. Favicon: в корне сайта `favicon.ico` и `favicon.svg`, ссылки в `<head>`.
+6. Переобход главной после обновления SEO
 
 ### Google Search Console
 
@@ -71,7 +73,8 @@ git push
 |------|------------|
 | `index.html` | Лендинг, стили, SEO, JSON-LD |
 | `CNAME` | Домен `expert-sites.ru` для GitHub Pages |
-| `robots.txt` | Правила для роботов |
+| `robots.txt` | Правила для роботов, `Host`, Sitemap |
 | `sitemap.xml` | Карта сайта |
+| `favicon.ico`, `favicon.svg` | Иконка сайта (корень) |
 | `images/og-cover.svg` | Превью в соцсетях |
 | `.nojekyll` | Статический HTML без Jekyll |
