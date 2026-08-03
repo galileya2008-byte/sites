@@ -148,6 +148,6 @@ git push
 | `CNAME` | Домен `expert-sites.ru` для GitHub Pages |
 | `robots.txt` | Правила для роботов, `Host`, Sitemap |
 | `sitemap.xml` | Карта сайта |
-| `favicon.ico`, `favicon.svg` | Иконка сайта (корень) |
+| `favicon.ico`, `favicon.svg`, `apple-touch-icon.png` | Иконка сайта (корень, пути `/favicon.ico`) |
 | `images/og-cover.svg` | Превью в соцсетях |
 | `.nojekyll` | Статический HTML без Jekyll |
