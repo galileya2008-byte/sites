@@ -93,9 +93,23 @@ git push
 
 Подробнее: [Securing your GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
 
+### Зависло «Проверка DNS» / «TLS 1 из 3» сутки и больше
+
+Сообщение **«Обнаружено изменение настроек DNS. Запрос нового сертификата»** — GitHub заново запускает выпуск сертификата. Если вчера меняли REG.RU или переключали **`expert-sites.ru` ↔ `www`**, шаг **1 из 3** может не двигаться.
+
+**DNS сейчас настроен верно** (`www` → `galileya2008-byte.github.io`, `@` → 4× A GitHub). Дальше **не правьте DNS** и сбросьте привязку в GitHub:
+
+1. [Settings → Pages профиля](https://github.com/settings/pages) → **Add a domain** → `expert-sites.ru` → **TXT** `_github-pages-challenge-galileya2008-byte` в REG.RU → **Verify**.
+2. [Pages репозитория sites](https://github.com/galileya2008-byte/sites/settings/pages) → **Remove** домен → **пауза 2–3 часа** (лучше на ночь), REG.RU не трогать.
+3. Один раз **Save** с доменом **`expert-sites.ru`** (без `www`, как в SEO). Поле `CNAME` в репо должно совпадать с доменом в Pages.
+4. До **24 ч** без правок DNS → включить **Enforce HTTPS**.
+
+Если через **48 ч** без изменений DNS всё ещё «1 из 3» — [support.github.com](https://support.github.com/).
+
+## Ссылки на оплату
 
 - Сайт-визитка: https://neirogalina.ru/visitka  
-- Полноценный сайт: https://neirogalina.ru/siteone  
+- Полноценный сайт: https://neirogalina.ru/siteone    
 
 ## SEO
 
