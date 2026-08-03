@@ -1788,7 +1788,11 @@
             </ul>
           </aside>
           <div class="ng-form-panel ng-glass">
-            <form class="ng-form-grid" id="ng-contact-form" data-form-email="galileya2008@yandex.ru" novalidate>
+            <form class="ng-form-grid" id="ng-contact-form" action="https://formsubmit.co/galileya2008@yandex.ru" method="POST" novalidate>
+              <input type="hidden" name="_next" value="http://expert-sites.ru/?sent=1#contact">
+              <input type="hidden" name="_subject" value="Заявка с expert-sites.ru — обсудить проект">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
               <input type="text" name="_honey" class="ng-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="ng-form-row-2">
                 <div class="ng-field">
@@ -1823,8 +1827,9 @@
                 <span>Даю согласие на обработку персональных данных в соответствии с политикой на <a href="https://neirogalina.ru/" target="_blank" rel="noopener noreferrer">neirogalina.ru</a></span>
               </label>
               <button type="submit" class="ng-btn ng-btn--primary ng-form-submit">Отправить заявку</button>
-              <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status">Спасибо! Заявка отправлена — скоро свяжусь с вами. Если это первый раз — проверьте почту <strong>galileya2008@yandex.ru</strong>: FormSubmit может прислать письмо «Activate Form» (и папку «Спам»).</p>
-              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Не удалось отправить заявку. Проверьте интернет и попробуйте снова, либо напишите в <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer" style="color:inherit">Telegram @galina1901</a> или на <a href="mailto:galileya2008@yandex.ru" style="color:inherit">galileya2008@yandex.ru</a>. <span id="ng-form-err-detail" class="ng-form-err-detail"></span></p>
+              <p class="ng-field-hint ng-form-activate-hint">Первый раз FormSubmit пришлёт на <strong>galileya2008@yandex.ru</strong> письмо с кнопкой подтверждения — без него заявки не доставляются. После подтверждения отправьте форму снова.</p>
+              <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status">Спасибо! Данные отправлены. Если заявки ещё не приходили на почту — откройте <strong>galileya2008@yandex.ru</strong> и нажмите ссылку в письме от FormSubmit «Confirm / Activate» (проверьте «Спам»), затем отправьте форму ещё раз.</p>
+              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Заполните обязательные поля и отметьте согласие на обработку данных.</p>
             </form>
           </div>
         </div>
@@ -1887,74 +1892,33 @@
       if (!form) return;
       var ok = document.getElementById("ng-form-ok");
       var err = document.getElementById("ng-form-err");
-      var btn = form.querySelector(".ng-form-submit");
-
-      function hideMsgs() {
-        if (ok) ok.classList.remove("is-visible");
-        if (err) err.classList.remove("is-visible");
-        var detail = document.getElementById("ng-form-err-detail");
-        if (detail) detail.textContent = "";
-      }
 
       if (window.location.search.indexOf("sent=1") !== -1 && ok) {
         ok.classList.add("is-visible");
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState({}, "", window.location.pathname + "#contact");
+        }
       }
 
       form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        hideMsgs();
+        if (err) err.classList.remove("is-visible");
         if (!form.checkValidity()) {
+          e.preventDefault();
           form.reportValidity();
-          return;
-        }
-        var email = (form.getAttribute("data-form-email") || "").trim();
-        if (!email || email.indexOf("@") < 1) {
           if (err) err.classList.add("is-visible");
           return;
         }
-        var fd = new FormData(form);
-        var userEmail = (fd.get("email") || "").toString().trim();
-        if (userEmail) fd.append("_replyto", userEmail);
-        fd.append("_subject", "Заявка с expert-sites.ru — обсудить проект");
-        fd.append("_captcha", "false");
-        fd.append("_template", "table");
-        if (btn) btn.disabled = true;
-        fetch("https://formsubmit.co/ajax/" + encodeURIComponent(email), {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: fd
-        })
-          .then(function (r) {
-            return r.json().catch(function () { return { success: false, message: "Некорректный ответ сервера" }; });
-          })
-          .then(function (data) {
-            var okFlag = data && (data.success === true || data.success === "true");
-            if (okFlag) {
-              form.reset();
-              if (ok) ok.classList.add("is-visible");
-              if (window.history && window.history.replaceState) {
-                window.history.replaceState({}, "", window.location.pathname + "#contact");
-              }
-            } else {
-              if (err) {
-                var detail = document.getElementById("ng-form-err-detail");
-                var hint = data && data.message ? String(data.message) : "";
-                if (hint.indexOf("Activate") !== -1 || hint.indexOf("activate") !== -1) {
-                  hint = "Подтвердите почту: откройте письмо от FormSubmit на galileya2008@yandex.ru (папка «Спам»), затем отправьте форму снова.";
-                } else if (hint.indexOf("HTML files") !== -1) {
-                  hint = "Форма работает только на опубликованном сайте (http://expert-sites.ru), не из локального файла на компьютере.";
-                }
-                if (detail) detail.textContent = hint ? hint : "";
-                err.classList.add("is-visible");
-              }
-            }
-          })
-          .catch(function () {
-            if (err) err.classList.add("is-visible");
-          })
-          .finally(function () {
-            if (btn) btn.disabled = false;
-          });
+        var userEmail = (document.getElementById("ng-email") || {}).value;
+        if (userEmail) {
+          var reply = form.querySelector('input[name="_replyto"]');
+          if (!reply) {
+            reply = document.createElement("input");
+            reply.type = "hidden";
+            reply.name = "_replyto";
+            form.appendChild(reply);
+          }
+          reply.value = userEmail.trim();
+        }
       });
     })();
 
