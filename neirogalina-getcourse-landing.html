@@ -17,10 +17,10 @@
   <link rel="canonical" href="https://expert-sites.ru/">
   <link rel="alternate" hreflang="ru" href="https://expert-sites.ru/">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://expert-sites.ru/sitemap.xml">
-  <link rel="icon" href="https://expert-sites.ru/favicon.ico" sizes="48x48">
-  <link rel="icon" href="https://expert-sites.ru/favicon.svg" type="image/svg+xml">
-  <link rel="shortcut icon" href="https://expert-sites.ru/favicon.ico">
-  <link rel="apple-touch-icon" href="https://expert-sites.ru/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Neiro Galina — разработка сайтов">
@@ -1185,6 +1185,22 @@
       color: #fecaca;
     }
 
+    .ng-form-err-detail {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .ng-honey {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
     /* Sticky nav */
     .ng-nav {
       position: sticky;
@@ -1773,6 +1789,7 @@
           </aside>
           <div class="ng-form-panel ng-glass">
             <form class="ng-form-grid" id="ng-contact-form" data-form-email="galileya2008@yandex.ru" novalidate>
+              <input type="text" name="_honey" class="ng-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="ng-form-row-2">
                 <div class="ng-field">
                   <label for="ng-name">Имя</label>
@@ -1806,8 +1823,8 @@
                 <span>Даю согласие на обработку персональных данных в соответствии с политикой на <a href="https://neirogalina.ru/" target="_blank" rel="noopener noreferrer">neirogalina.ru</a></span>
               </label>
               <button type="submit" class="ng-btn ng-btn--primary ng-form-submit">Отправить заявку</button>
-              <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status">Спасибо! Заявка отправлена — скоро свяжусь с вами.</p>
-              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Не удалось отправить. Напишите в <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer" style="color:inherit">Telegram @galina1901</a> или на <a href="mailto:galileya2008@yandex.ru" style="color:inherit">galileya2008@yandex.ru</a>.</p>
+              <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status">Спасибо! Заявка отправлена — скоро свяжусь с вами. Если это первый раз — проверьте почту <strong>galileya2008@yandex.ru</strong>: FormSubmit может прислать письмо «Activate Form» (и папку «Спам»).</p>
+              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Не удалось отправить заявку. Проверьте интернет и попробуйте снова, либо напишите в <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer" style="color:inherit">Telegram @galina1901</a> или на <a href="mailto:galileya2008@yandex.ru" style="color:inherit">galileya2008@yandex.ru</a>. <span id="ng-form-err-detail" class="ng-form-err-detail"></span></p>
             </form>
           </div>
         </div>
@@ -1875,6 +1892,8 @@
       function hideMsgs() {
         if (ok) ok.classList.remove("is-visible");
         if (err) err.classList.remove("is-visible");
+        var detail = document.getElementById("ng-form-err-detail");
+        if (detail) detail.textContent = "";
       }
 
       if (window.location.search.indexOf("sent=1") !== -1 && ok) {
@@ -1894,24 +1913,41 @@
           return;
         }
         var fd = new FormData(form);
+        var userEmail = (fd.get("email") || "").toString().trim();
+        if (userEmail) fd.append("_replyto", userEmail);
         fd.append("_subject", "Заявка с expert-sites.ru — обсудить проект");
         fd.append("_captcha", "false");
         fd.append("_template", "table");
         if (btn) btn.disabled = true;
-        fetch("https://formsubmit.co/ajax/" + email, {
+        fetch("https://formsubmit.co/ajax/" + encodeURIComponent(email), {
           method: "POST",
           headers: { Accept: "application/json" },
           body: fd
         })
-          .then(function (r) { return r.json(); })
+          .then(function (r) {
+            return r.json().catch(function () { return { success: false, message: "Некорректный ответ сервера" }; });
+          })
           .then(function (data) {
-            if (data && data.success) {
+            var okFlag = data && (data.success === true || data.success === "true");
+            if (okFlag) {
               form.reset();
               if (ok) ok.classList.add("is-visible");
               if (window.history && window.history.replaceState) {
                 window.history.replaceState({}, "", window.location.pathname + "#contact");
               }
-            } else if (err) err.classList.add("is-visible");
+            } else {
+              if (err) {
+                var detail = document.getElementById("ng-form-err-detail");
+                var hint = data && data.message ? String(data.message) : "";
+                if (hint.indexOf("Activate") !== -1 || hint.indexOf("activate") !== -1) {
+                  hint = "Подтвердите почту: откройте письмо от FormSubmit на galileya2008@yandex.ru (папка «Спам»), затем отправьте форму снова.";
+                } else if (hint.indexOf("HTML files") !== -1) {
+                  hint = "Форма работает только на опубликованном сайте (http://expert-sites.ru), не из локального файла на компьютере.";
+                }
+                if (detail) detail.textContent = hint ? hint : "";
+                err.classList.add("is-visible");
+              }
+            }
           })
           .catch(function () {
             if (err) err.classList.add("is-visible");
