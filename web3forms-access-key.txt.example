@@ -1,0 +1,2 @@
+# Ключ Web3Forms (одна строка). Получить: https://web3forms.com/ → email galileya2008@yandex.ru
+# После получения вставьте ключ в index.html: data-web3forms-access-key="ВАШ_КЛЮЧ"

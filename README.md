@@ -136,7 +136,11 @@ git push
 
 ### Форма «Обсудить проект»
 
-Заявки отправляются через [FormSubmit](https://formsubmit.co). В `index.html` у формы `#ng-contact-form` укажите ваш email в атрибуте `data-form-email`. При первой заявке FormSubmit пришлёт письмо с подтверждением — его нужно принять один раз.
+**FormSubmit отключён** (часто не открывается из РФ). Сейчас:
+
+1. **Telegram** — при отправке открывается [@galina1901](https://t.me/galina1901) с готовым текстом заявки (нужно нажать «Отправить» в чате).
+2. **Почта** — после настройки [Web3Forms](https://web3forms.com/): зарегистрируйте `galileya2008@yandex.ru`, скопируйте Access Key в `index.html` → атрибут `data-web3forms-access-key` у `#ng-contact-form` (см. `web3forms-access-key.txt.example`).
+
 
 Код счётчика — перед `</body>` в `index.html`.
 
