@@ -93,9 +93,18 @@ git push
 
 Подробнее: [Securing your GitHub Pages site with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
 
-### Зависло «Проверка DNS» / «TLS 1 из 3» сутки и больше
+Если **«Проверка DNS выполняется»** несколько **дней**, а сайт по **http://expert-sites.ru** открывается — это **не ошибка REG.RU**: снаружи уже видны 4× A на GitHub и CNAME `www` → `galileya2008-byte.github.io`. Значит, **зависла проверка на стороне GitHub** (часто без TXT-верификации домена в профиле).
 
-Сообщение **«Обнаружено изменение настроек DNS. Запрос нового сертификата»** — GitHub заново запускает выпуск сертификата. Если вчера меняли REG.RU или переключали **`expert-sites.ru` ↔ `www`**, шаг **1 из 3** может не двигаться.
+**Обязательно по порядку:**
+
+1. **[Settings → Pages профиля](https://github.com/settings/pages)** (не репозитория!) → **Add a domain** → `expert-sites.ru` → в REG.RU добавьте **TXT** для `_github-pages-challenge-galileya2008-byte` (значение скопируйте из GitHub) → **Verify**. Без этой записи проверка в репозитории может крутиться неделями.
+2. **[Pages → sites](https://github.com/galileya2008-byte/sites/settings/pages)** → в поле домена только **`expert-sites.ru`** (как файл `CNAME` в репо, **не** `www`). Если указан `www` — смените на apex или наоборот, но **везде одинаково**.
+3. **Remove** домен в репозитории → **24 часа** не трогать DNS и не Save → снова **`expert-sites.ru`** → **Save** один раз.
+4. Через сутки — **Enforce HTTPS**, если чекбокс активен.
+
+Если после **Verify** в профиле и **48 ч** без правок DNS галочки всё нет — [support.github.com](https://support.github.com/) (тема: Custom domain DNS check stuck, A records correct).
+
+Сообщение **«Обнаружено изменение настроек DNS…»** (TLS 1 из 3):
 
 **DNS сейчас настроен верно** (`www` → `galileya2008-byte.github.io`, `@` → 4× A GitHub). Дальше **не правьте DNS** и сбросьте привязку в GitHub:
 
