@@ -1537,7 +1537,7 @@
             Тарифы
           </div>
           <h2 class="ng-h2">Сравнение двух форматов</h2>
-          <p class="ng-sub">Выберите объём под вашу задачу. При заказе до 12 августа — интерактив на сайт в подарок.</p>
+          <p class="ng-sub">Выберите объём под вашу задачу. При заказе до 12 августа — интерактив на сайт в подарок. Многостраничный сайт: с <strong>1 сентября</strong> — повышение цены.</p>
         </div>
         <div class="ng-pricing-grid">
           <article class="ng-price-card ng-glass">
@@ -1574,6 +1574,7 @@
             <p class="ng-price-desc">Многостраничный сайт для масштабирования линейки услуг и контента.</p>
             <div class="ng-price-amount">50 000 <span>₽</span></div>
             <p class="ng-price-term">Срок изготовления: 7–12 дней</p>
+            <p class="ng-price-old">С <strong>1 сентября 2026</strong> стоимость многостраничных сайтов будет выше. Зафиксируйте тариф <strong>50&nbsp;000&nbsp;₽</strong>, оформив заказ до повышения.</p>
             <ul class="ng-price-features">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1788,12 +1789,8 @@
             </ul>
           </aside>
           <div class="ng-form-panel ng-glass">
-            <form class="ng-form-grid" id="ng-contact-form" action="https://formsubmit.co/galileya2008@yandex.ru" method="POST" novalidate>
-              <input type="hidden" name="_next" value="http://expert-sites.ru/?sent=1#contact">
-              <input type="hidden" name="_subject" value="Заявка с expert-sites.ru — обсудить проект">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="text" name="_honey" class="ng-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <form class="ng-form-grid" id="ng-contact-form" data-web3forms-access-key="" data-telegram="galina1901" novalidate>
+              <input type="checkbox" name="botcheck" class="ng-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
               <div class="ng-form-row-2">
                 <div class="ng-field">
                   <label for="ng-name">Имя</label>
@@ -1827,9 +1824,9 @@
                 <span>Даю согласие на обработку персональных данных в соответствии с политикой на <a href="https://neirogalina.ru/" target="_blank" rel="noopener noreferrer">neirogalina.ru</a></span>
               </label>
               <button type="submit" class="ng-btn ng-btn--primary ng-form-submit">Отправить заявку</button>
-              <p class="ng-field-hint ng-form-activate-hint">Первый раз FormSubmit пришлёт на <strong>galileya2008@yandex.ru</strong> письмо с кнопкой подтверждения — без него заявки не доставляются. После подтверждения отправьте форму снова.</p>
-              <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status">Спасибо! Данные отправлены. Если заявки ещё не приходили на почту — откройте <strong>galileya2008@yandex.ru</strong> и нажмите ссылку в письме от FormSubmit «Confirm / Activate» (проверьте «Спам»), затем отправьте форму ещё раз.</p>
-              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Заполните обязательные поля и отметьте согласие на обработку данных.</p>
+              <p class="ng-field-hint ng-form-activate-hint">Заявка уходит на <strong>galileya2008@yandex.ru</strong> (если настроен ключ Web3Forms) или откроется <strong>Telegram @galina1901</strong> с готовым текстом — нажмите «Отправить» в чате. FormSubmit отключён: у многих он не открывается из РФ.</p>
+              <p class="ng-form-msg ng-form-msg--ok" id="ng-form-ok" role="status"></p>
+              <p class="ng-form-msg ng-form-msg--err" id="ng-form-err" role="alert">Заполните обязательные поля и отметьте согласие. Или напишите в <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer" style="color:inherit">Telegram @galina1901</a>.</p>
             </form>
           </div>
         </div>
@@ -1840,7 +1837,7 @@
       <div class="ng-container">
         <div class="ng-cta-box ng-glass">
           <h2 class="ng-h2">Закажите сайт под ваши задачи</h2>
-          <p class="ng-lead">Выберите формат и перейдите к оформлению. До 12 августа — интерактив на сайт в подарок.</p>
+          <p class="ng-lead">Выберите формат и перейдите к оформлению. До 12 августа — интерактив на сайт в подарок. Полноценный (многостраничный) сайт: с 1 сентября цена будет выше.</p>
           <div class="ng-btn-row">
             <a class="ng-btn ng-btn--ghost" href="#contact">Обсудить проект</a>
             <a class="ng-btn ng-btn--primary" href="https://neirogalina.ru/visitka" target="_blank" rel="noopener noreferrer">
@@ -1892,32 +1889,90 @@
       if (!form) return;
       var ok = document.getElementById("ng-form-ok");
       var err = document.getElementById("ng-form-err");
+      var btn = form.querySelector(".ng-form-submit");
 
-      if (window.location.search.indexOf("sent=1") !== -1 && ok) {
-        ok.classList.add("is-visible");
-        if (window.history && window.history.replaceState) {
-          window.history.replaceState({}, "", window.location.pathname + "#contact");
-        }
+      function field(id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : "";
+      }
+
+      function buildLeadText() {
+        return (
+          "Заявка с expert-sites.ru\n\n" +
+          "Имя: " + field("ng-name") + "\n" +
+          "Телефон / Telegram: " + field("ng-phone") + "\n" +
+          "Email: " + field("ng-email") + "\n" +
+          "Интересует: " + field("ng-format") + "\n\n" +
+          "О проекте:\n" + field("ng-message")
+        );
+      }
+
+      function openTelegram() {
+        var user = (form.getAttribute("data-telegram") || "galina1901").replace(/^@/, "");
+        var url = "https://t.me/" + encodeURIComponent(user) + "?text=" + encodeURIComponent(buildLeadText());
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+
+      function sendWeb3Forms(key) {
+        var body = {
+          access_key: key,
+          subject: "Заявка с expert-sites.ru — обсудить проект",
+          from_name: "Expert Sites",
+          name: field("ng-name"),
+          email: field("ng-email"),
+          message: buildLeadText(),
+          botcheck: ""
+        };
+        return fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(body)
+        }).then(function (r) { return r.json().then(function (j) { return { status: r.status, json: j }; }); });
       }
 
       form.addEventListener("submit", function (e) {
+        e.preventDefault();
         if (err) err.classList.remove("is-visible");
+        if (ok) ok.classList.remove("is-visible");
         if (!form.checkValidity()) {
-          e.preventDefault();
           form.reportValidity();
           if (err) err.classList.add("is-visible");
           return;
         }
-        var userEmail = (document.getElementById("ng-email") || {}).value;
-        if (userEmail) {
-          var reply = form.querySelector('input[name="_replyto"]');
-          if (!reply) {
-            reply = document.createElement("input");
-            reply.type = "hidden";
-            reply.name = "_replyto";
-            form.appendChild(reply);
+        var key = (form.getAttribute("data-web3forms-access-key") || "").trim();
+        if (btn) btn.disabled = true;
+
+        function finishTelegram() {
+          openTelegram();
+          if (ok) {
+            ok.textContent = "Открылся Telegram @galina1901 с текстом заявки — нажмите «Отправить» в чате. Если окно не открылось, перейдите по ссылке в блоке контактов слева.";
+            ok.classList.add("is-visible");
           }
-          reply.value = userEmail.trim();
+          form.reset();
+        }
+
+        if (key.length > 8) {
+          sendWeb3Forms(key)
+            .then(function (res) {
+              if (res.status === 200 && res.json && res.json.success) {
+                form.reset();
+                if (ok) {
+                  ok.textContent = "Спасибо! Заявка отправлена на galileya2008@yandex.ru — скоро свяжусь с вами.";
+                  ok.classList.add("is-visible");
+                }
+              } else {
+                finishTelegram();
+              }
+            })
+            .catch(function () {
+              finishTelegram();
+            })
+            .finally(function () {
+              if (btn) btn.disabled = false;
+            });
+        } else {
+          finishTelegram();
+          if (btn) btn.disabled = false;
         }
       });
     })();
