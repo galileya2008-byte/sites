@@ -1246,3 +1246,83 @@
     .ng-case-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.65rem; border-radius: 999px; background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35); margin-bottom: 0.85rem; }
     .ng-case-link { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 1rem; font-size: 0.95rem; font-weight: 600; color: var(--accent-bright); text-decoration: none; }
     .ng-case-link:hover { text-decoration: underline; }
+
+    .ng-about-layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 300px) 1fr;
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .ng-about-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+      .ng-about-layout .ng-author-photo {
+        max-width: 280px;
+      }
+    }
+
+    .ng-author-photo {
+      margin: 0;
+      text-align: center;
+    }
+
+    .ng-author-photo-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(96, 165, 250, 0.38);
+      background: var(--glass-bg);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 24px 48px rgba(0, 0, 0, 0.28),
+        0 0 40px rgba(59, 130, 246, 0.18);
+    }
+
+    .ng-author-photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 21, 47, 0.05) 0%, rgba(6, 21, 47, 0.55) 100%);
+      pointer-events: none;
+    }
+
+    .ng-author-photo-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+
+    .ng-author-photo-caption {
+      margin-top: 0.9rem;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .ng-author-photo-role {
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .ng-author-photo--compact {
+      max-width: 140px;
+      margin-inline: auto;
+    }
+
+    .ng-author-photo--compact .ng-author-photo-frame {
+      border-radius: var(--radius-md);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.15);
+    }
+
+    .ng-author-photo--compact .ng-author-photo-caption {
+      font-size: 0.95rem;
+      margin-top: 0.65rem;
+    }

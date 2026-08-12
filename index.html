@@ -63,7 +63,7 @@
         "@id": "https://expert-sites.ru/#organization",
         "name": "Галина Оноприенко",
         "url": "https://expert-sites.ru/o-mne/",
-        "image": "https://expert-sites.ru/images/og-cover.svg",
+        "image": "https://expert-sites.ru/images/galina-onoprienko.png",
         "description": "Разработчик сайтов для экспертов: создаю сайты-визитки и многостраничные проекты под продажу услуг, с SEO под Яндекс.",
         "email": "galileya2008@yandex.ru",
         "sameAs": [
@@ -1396,6 +1396,87 @@
     .ng-footer-copy a { color: inherit; }
     .ng-link-more { display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 600; color: var(--accent-bright); text-decoration: none; }
 
+    .ng-about-layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 300px) 1fr;
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .ng-about-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+      .ng-about-layout .ng-author-photo {
+        max-width: 280px;
+      }
+    }
+
+    .ng-author-photo {
+      margin: 0;
+      text-align: center;
+    }
+
+    .ng-author-photo-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(96, 165, 250, 0.38);
+      background: var(--glass-bg);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 24px 48px rgba(0, 0, 0, 0.28),
+        0 0 40px rgba(59, 130, 246, 0.18);
+    }
+
+    .ng-author-photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 21, 47, 0.05) 0%, rgba(6, 21, 47, 0.55) 100%);
+      pointer-events: none;
+    }
+
+    .ng-author-photo-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 15%;
+      vertical-align: middle;
+    }
+
+    .ng-author-photo-caption {
+      margin-top: 0.9rem;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .ng-author-photo-role {
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .ng-author-photo--compact {
+      max-width: 140px;
+      margin-inline: auto;
+    }
+
+    .ng-author-photo--compact .ng-author-photo-frame {
+      border-radius: var(--radius-md);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.15);
+    }
+
+    .ng-author-photo--compact .ng-author-photo-caption {
+      font-size: 0.95rem;
+      margin-top: 0.65rem;
+    }
+
   </style>
 </head>
 <body>
@@ -1813,10 +1894,19 @@
           <h2 class="ng-h2" id="about-title">Галина Оноприенко — создаю сайты для экспертов</h2>
           <p class="ng-sub">Разработка сайтов под продажу услуг: от одностраничной визитки до многостраничного проекта с SEO.</p>
         </div>
-        <div class="ng-expert-intro ng-glass">
-          <p>Я — <strong>Галина Оноприенко</strong>, разработчик сайтов для экспертов, коучей, психологов и наставников. Делаю не «страничку в интернете», а инструмент, который объясняет вашу ценность и приводит заявки: понятная структура, премиальный дизайн, формы связи и базовая <strong>SEO-оптимизация под Яндекс</strong>.</p>
-          <p>Форматы — <strong>сайт-визитка</strong> (25 000 ₽) и <strong>полноценный сайт</strong> (50 000 ₽). Срок изготовления обычно 3–12 дней. Среди кейсов — <a href="https://anna-yakubova.ru/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-bright);">anna-yakubova.ru</a> в топе выдачи Яндекса.</p>
-          <p style="margin-top: 1rem;"><a class="ng-btn ng-btn--secondary" href="o-mne/" style="display: inline-flex;">Подробнее обо мне</a></p>
+        <div class="ng-about-layout ng-expert-intro ng-glass" style="padding: 2rem;">
+          <figure class="ng-author-photo">
+            <div class="ng-author-photo-frame">
+              <img src="images/galina-onoprienko.png" alt="Галина Оноприенко — разработчик сайтов для экспертов" width="640" height="853" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="ng-author-photo-caption">Галина Оноприенко</figcaption>
+            <p class="ng-author-photo-role">Разработчик сайтов для экспертов</p>
+          </figure>
+          <div>
+            <p>Я — <strong>Галина Оноприенко</strong>, разработчик сайтов для экспертов, коучей, психологов и наставников. Делаю не «страничку в интернете», а инструмент, который объясняет вашу ценность и приводит заявки: понятная структура, премиальный дизайн, формы связи и базовая <strong>SEO-оптимизация под Яндекс</strong>.</p>
+            <p>Форматы — <strong>сайт-визитка</strong> (25 000 ₽) и <strong>полноценный сайт</strong> (50 000 ₽). Срок изготовления обычно 3–12 дней. Среди кейсов — <a href="https://anna-yakubova.ru/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-bright);">anna-yakubova.ru</a> в топе выдачи Яндекса.</p>
+            <p style="margin-top: 1rem;"><a class="ng-btn ng-btn--secondary" href="o-mne/" style="display: inline-flex;">Подробнее обо мне</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -1833,7 +1923,12 @@
         </div>
         <div class="ng-contact-layout">
           <aside class="ng-contact-aside ng-glass">
-            <h3>Галина Оноприенко</h3>
+            <figure class="ng-author-photo ng-author-photo--compact">
+              <div class="ng-author-photo-frame">
+                <img src="images/galina-onoprienko.png" alt="Галина Оноприенко" width="280" height="373" loading="lazy" decoding="async">
+              </div>
+              <figcaption class="ng-author-photo-caption">Галина Оноприенко</figcaption>
+            </figure>
             <p>Разработка сайтов для экспертов под продажу услуг: визитки, лендинги и многостраничные проекты с SEO и интерактивом. <a href="o-mne/" style="color: var(--accent-bright);">Подробнее обо мне →</a></p>
             <div class="ng-contact-channels">
               <span>Быстрая связь:</span>
