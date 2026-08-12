@@ -1242,3 +1242,7 @@
     .ng-footer-copy { text-align: center; font-size: 0.95rem; color: var(--text-muted); }
     .ng-footer-copy a { color: inherit; }
     .ng-link-more { display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 600; color: var(--accent-bright); text-decoration: none; }
+    .ng-case-card--featured { border-color: rgba(96, 165, 250, 0.45); background: rgba(255, 255, 255, 0.08); }
+    .ng-case-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.65rem; border-radius: 999px; background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35); margin-bottom: 0.85rem; }
+    .ng-case-link { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 1rem; font-size: 0.95rem; font-weight: 600; color: var(--accent-bright); text-decoration: none; }
+    .ng-case-link:hover { text-decoration: underline; }
