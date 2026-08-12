@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Полноценный многостраничный сайт для эксперта: услуги, о вас, кейсы, контакты, SEO под Яндекс. Разработка под ключ от 50 000 ₽.">
+  <meta name="theme-color" content="#06152F">
+  <link rel="canonical" href="https://expert-sites.ru/polnyj-sajt/">
+  <title>Полноценный сайт для эксперта — многостраничная разработка | Expert Sites</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <div class="ng-page">
+    <div class="ng-waves" aria-hidden="true">
+      <div class="ng-wave ng-wave--1"></div>
+      <div class="ng-wave ng-wave--2"></div>
+      <div class="ng-wave ng-wave--3"></div>
+      <div class="ng-wave ng-wave--4"></div>
+    </div>
+    <div class="ng-grid-overlay" aria-hidden="true"></div>
+
+    <header class="ng-header">
+      <div class="ng-container ng-nav">
+        <a class="ng-nav-logo" href="../">Expert Sites</a>
+        <nav aria-label="Основная навигация">
+          <ul class="ng-nav-links">
+            <li><a href="../">Главная</a></li>
+            <li><a href="../vizitka/">Сайт-визитка</a></li>
+            <li><a href="../polnyj-sajt/" aria-current="page">Полный сайт</a></li>
+            <li><a href="../kejsy/">Кейсы</a></li>
+            <li><a href="../kontakty/">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <header class="ng-page-hero ng-section">
+      <div class="ng-container">
+        <div class="ng-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Полноценный сайт
+        </div>
+        <h1 class="ng-h1">Многостраничный сайт для масштабирования экспертного бренда</h1>
+        <p class="ng-lead">Когда одной страницы мало: несколько услуг, кейсы, подробное «о вас», юридические страницы и пространство для SEO-контента.</p>
+        <div class="ng-btn-row">
+          <a class="ng-btn ng-btn--primary" href="https://neirogalina.ru/siteone" target="_blank" rel="noopener noreferrer">Заказать — 50 000 ₽</a>
+          <a class="ng-btn ng-btn--secondary" href="../vizitka/">Сравнить с визиткой</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="ng-section ng-reveal">
+      <div class="ng-container">
+        <div class="ng-prose ng-glass" style="padding: 2rem;">
+          <p>Полноценный сайт — выбор для экспертов, которые планируют расти: добавлять услуги, публиковать материалы, выстраивать доверие через кейсы и раздел «обо мне».</p>
+
+          <h2>Чем отличается от визитки</h2>
+          <ul>
+            <li>Несколько страниц вместо одной: главная, услуги, о вас, контакты и др.</li>
+            <li>Единая навигация и дизайн-система на всём сайте</li>
+            <li>Больше точек входа из поиска Яндекса по разным запросам</li>
+            <li>Место для юридических документов и расширенного контента</li>
+          </ul>
+
+          <h2>Что входит в работу</h2>
+          <ul>
+            <li>Проектирование структуры и прототип ключевых страниц</li>
+            <li>Дизайн и вёрстка всех согласованных разделов</li>
+            <li>Расширенные блоки доверия и кейсы</li>
+            <li>Расширенная SEO-структура под Яндекс</li>
+            <li>Юридические страницы для РФ</li>
+          </ul>
+
+          <h2>Стоимость</h2>
+          <p>Разработка полноценного сайта — <strong>50 000 ₽</strong>. Финальный состав страниц согласуется на старте проекта.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ng-section ng-cta ng-reveal">
+      <div class="ng-container">
+        <div class="ng-cta-box ng-glass">
+          <h2 class="ng-h2">Нужен сайт с несколькими разделами?</h2>
+          <p class="ng-lead">Оставьте заявку — обсудим структуру под вашу линейку услуг.</p>
+          <div class="ng-btn-row">
+            <a class="ng-btn ng-btn--primary" href="https://neirogalina.ru/siteone" target="_blank" rel="noopener noreferrer">Заказать полный сайт</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ng-site-footer">
+      <div class="ng-container">
+        <ul class="ng-footer-nav">
+          <li><a href="../">Главная</a></li>
+          <li><a href="../vizitka/">Сайт-визитка</a></li>
+          <li><a href="../polnyj-sajt/">Полный сайт</a></li>
+          <li><a href="../kejsy/">Кейсы</a></li>
+          <li><a href="../kontakty/">Контакты</a></li>
+        </ul>
+        <p class="ng-footer-copy"><a href="https://neirogalina.ru/">neirogalina.ru</a> · Разработка сайтов для экспертов</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reveals = document.querySelectorAll(".ng-reveal");
+      if (!reveals.length) return;
+      if (!("IntersectionObserver" in window)) {
+        reveals.forEach(function (el) { el.classList.add("ng-visible"); });
+        return;
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("ng-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      );
+      reveals.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+</html>

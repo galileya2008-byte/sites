@@ -1347,6 +1347,42 @@
         transform: none;
       }
     }
+  
+    .ng-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 0.85rem 0;
+      background: rgba(6, 21, 47, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .ng-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .ng-nav-logo { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+    .ng-nav-links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; list-style: none; }
+    .ng-nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; }
+    .ng-nav-links a:hover, .ng-nav-links a[aria-current="page"] { color: var(--accent-bright); }
+    .ng-page-hero { padding-top: clamp(3rem, 8vw, 5rem); padding-bottom: clamp(2.5rem, 6vw, 4rem); text-align: center; }
+    .ng-prose { max-width: 720px; margin-inline: auto; color: var(--text-secondary); font-size: 1.0625rem; }
+    .ng-prose p { margin-bottom: 1.15rem; }
+    .ng-prose h2 { font-size: 1.35rem; font-weight: 600; color: var(--text-primary); margin: 2rem 0 0.85rem; }
+    .ng-prose ul { margin: 0 0 1.15rem 1.25rem; }
+    .ng-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .ng-case-card { padding: 1.75rem; height: 100%; }
+    .ng-case-card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.65rem; }
+    .ng-case-card p { font-size: 1rem; color: var(--text-secondary); }
+    .ng-contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; max-width: 720px; margin-inline: auto; }
+    .ng-contact-item { padding: 1.5rem; text-align: center; }
+    .ng-contact-item strong { display: block; margin-bottom: 0.35rem; color: var(--text-primary); }
+    .ng-contact-item a { color: var(--accent-bright); text-decoration: none; }
+    .ng-site-footer { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 2rem 1rem 3rem; }
+    .ng-footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem; list-style: none; margin-bottom: 1rem; }
+    .ng-footer-nav a { font-size: 0.95rem; color: var(--text-secondary); text-decoration: none; }
+    .ng-footer-copy { text-align: center; font-size: 0.95rem; color: var(--text-muted); }
+    .ng-footer-copy a { color: inherit; }
+    .ng-link-more { display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 600; color: var(--accent-bright); text-decoration: none; }
+
   </style>
 </head>
 <body>
@@ -1410,10 +1446,6 @@
           </svg>
           <span>Срок изготовления: <strong>3–12 дней</strong> — в зависимости от тарифа и объёма согласований</span>
         </div>
-        <div class="ng-gift-promo ng-glass" style="animation: ng-fade-up 0.8s var(--ease-out) 0.55s both;">
-          <div class="ng-gift-promo-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-            <div class="ng-gift-promo-title">При заказе до <strong>12 августа</strong> — интерактив / геймификация на ваш сайт <strong>в подарок</strong>!</div>
           </div>
           <p>Интерактив помогает лучше прогреть аудиторию под ваши услуги и улучшить положение сайта в поисковой выдаче.</p>
         </div>
@@ -1458,7 +1490,7 @@
           </article>
           <article class="ng-expert-card ng-glass">
             <h3>Интерактив и SEO</h3>
-            <p>Квизы, калькуляторы, мини-игры удерживают внимание и дают поведенческие сигналы для поиска. До 12 августа добавим интерактив в подарок при заказе.</p>
+            <p>Квизы, калькуляторы и мини-игры удерживают внимание и дают поведенческие сигналы для поиска — подключаем по задаче проекта.</p>
           </article>
           <article class="ng-expert-card ng-glass">
             <h3>Реклама окупается лучше</h3>
@@ -1537,7 +1569,7 @@
             Тарифы
           </div>
           <h2 class="ng-h2">Сравнение двух форматов</h2>
-          <p class="ng-sub">Выберите объём под вашу задачу. При заказе до 12 августа — интерактив на сайт в подарок. Многостраничный сайт: с <strong>1 сентября</strong> — повышение цены.</p>
+          <p class="ng-sub">Выберите объём под вашу задачу или откройте страницу тарифа с подробным описанием.</p>
         </div>
         <div class="ng-pricing-grid">
           <article class="ng-price-card ng-glass">
@@ -1567,6 +1599,7 @@
                 Базовая SEO-настройка под Яндекс
               </li>
             </ul>
+            <a class="ng-link-more" href="vizitka/">Подробнее о визитке</a>
             <a class="ng-btn ng-btn--secondary ng-btn--block" href="https://neirogalina.ru/visitka" target="_blank" rel="noopener noreferrer">Заказать визитку</a>
           </article>
           <article class="ng-price-card ng-glass ng-price-card--featured">
@@ -1574,7 +1607,6 @@
             <p class="ng-price-desc">Многостраничный сайт для масштабирования линейки услуг и контента.</p>
             <div class="ng-price-amount">50 000 <span>₽</span></div>
             <p class="ng-price-term">Срок изготовления: 7–12 дней</p>
-            <p class="ng-price-old">С <strong>1 сентября 2026</strong> стоимость многостраничных сайтов будет выше. Зафиксируйте тариф <strong>50&nbsp;000&nbsp;₽</strong>, оформив заказ до повышения.</p>
             <ul class="ng-price-features">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -1601,6 +1633,7 @@
                 Юридические страницы для РФ
               </li>
             </ul>
+            <a class="ng-link-more" href="polnyj-sajt/">Подробнее о полном сайте</a>
             <a class="ng-btn ng-btn--primary ng-btn--block" href="https://neirogalina.ru/siteone" target="_blank" rel="noopener noreferrer">Заказать полный сайт</a>
           </article>
         </div>
@@ -1672,7 +1705,7 @@
                 <svg class="ng-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
                 <div>
                   <strong>Интерактив и геймификация</strong>
-                  Вовлекающие элементы на сайте — прогрев аудитории и дополнительные сигналы для SEO. При заказе до 12 августа — в подарок.
+                  Вовлекающие элементы на сайте — прогрев аудитории и дополнительные сигналы для SEO.
                 </div>
               </li>
               <li>
@@ -1785,7 +1818,7 @@
               <li>Бесплатная первичная консультация по структуре сайта</li>
               <li>Подбор тарифа: визитка или полный сайт</li>
               <li>Срок изготовления 3–12 дней</li>
-              <li>Подарок: интерактив при заказе до 12 августа</li>
+              <li>Интерактивные элементы — по согласованию с задачей проекта</li>
             </ul>
           </aside>
           <div class="ng-form-panel ng-glass">
@@ -1837,7 +1870,7 @@
       <div class="ng-container">
         <div class="ng-cta-box ng-glass">
           <h2 class="ng-h2">Закажите сайт под ваши задачи</h2>
-          <p class="ng-lead">Выберите формат и перейдите к оформлению. До 12 августа — интерактив на сайт в подарок. Полноценный (многостраничный) сайт: с 1 сентября цена будет выше.</p>
+          <p class="ng-lead">Выберите формат и перейдите к оформлению заявки.</p>
           <div class="ng-btn-row">
             <a class="ng-btn ng-btn--ghost" href="#contact">Обсудить проект</a>
             <a class="ng-btn ng-btn--primary" href="https://neirogalina.ru/visitka" target="_blank" rel="noopener noreferrer">
@@ -1855,10 +1888,21 @@
 
     </main>
 
-    <footer class="ng-footer-note">
-      <a href="https://neirogalina.ru/" style="color: inherit;">neirogalina.ru</a>
-      · <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer" style="color: inherit;">Telegram @galina1901</a>
-      · Разработка сайтов для экспертов · Срок изготовления 3–12 дней
+    <footer class="ng-site-footer">
+      <div class="ng-container">
+        <ul class="ng-footer-nav">
+          <li><a href="./">Главная</a></li>
+          <li><a href="vizitka/">Сайт-визитка</a></li>
+          <li><a href="polnyj-sajt/">Полный сайт</a></li>
+          <li><a href="kejsy/">Кейсы</a></li>
+          <li><a href="kontakty/">Контакты</a></li>
+        </ul>
+        <p class="ng-footer-copy">
+          <a href="https://neirogalina.ru/">neirogalina.ru</a>
+          · <a href="https://t.me/galina1901" target="_blank" rel="noopener noreferrer">Telegram @galina1901</a>
+          · Разработка сайтов для экспертов · Срок изготовления 3–12 дней
+        </p>
+      </div>
     </footer>
   </div>
 
