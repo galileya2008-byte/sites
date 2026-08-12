@@ -1249,7 +1249,7 @@
 
     .ng-about-layout {
       display: grid;
-      grid-template-columns: minmax(220px, 300px) 1fr;
+      grid-template-columns: minmax(160px, 200px) 1fr;
       gap: clamp(1.5rem, 4vw, 2.5rem);
       align-items: start;
     }
@@ -1259,33 +1259,35 @@
         grid-template-columns: 1fr;
         justify-items: center;
       }
-      .ng-about-layout .ng-author-photo {
-        max-width: 280px;
-      }
     }
 
     .ng-author-photo {
       margin: 0;
       text-align: center;
+      max-width: 200px;
+      width: 100%;
     }
 
     .ng-author-photo-frame {
       position: relative;
+      padding: 0.65rem;
       border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(96, 165, 250, 0.38);
-      background: var(--glass-bg);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-        0 24px 48px rgba(0, 0, 0, 0.28),
-        0 0 40px rgba(59, 130, 246, 0.18);
+        0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+        0 16px 32px rgba(0, 0, 0, 0.22),
+        0 0 28px rgba(59, 130, 246, 0.14);
     }
 
     .ng-author-photo-frame::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(6, 21, 47, 0.05) 0%, rgba(6, 21, 47, 0.55) 100%);
+      inset: 0.65rem;
+      border-radius: calc(var(--radius-lg) - 6px);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
       pointer-events: none;
     }
 
@@ -1293,36 +1295,44 @@
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      object-position: center 15%;
+      border-radius: calc(var(--radius-lg) - 6px);
     }
 
     .ng-author-photo-caption {
-      margin-top: 0.9rem;
-      font-size: 1.0625rem;
+      margin-top: 0.75rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--text-primary);
       letter-spacing: -0.01em;
     }
 
     .ng-author-photo-role {
-      margin-top: 0.25rem;
-      font-size: 0.95rem;
+      margin-top: 0.2rem;
+      font-size: 0.875rem;
       color: var(--text-muted);
     }
 
     .ng-author-photo--compact {
-      max-width: 140px;
+      max-width: 108px;
       margin-inline: auto;
+      margin-bottom: 1rem;
     }
 
     .ng-author-photo--compact .ng-author-photo-frame {
+      padding: 0.45rem;
       border-radius: var(--radius-md);
-      box-shadow: 0 0 24px rgba(59, 130, 246, 0.15);
+    }
+
+    .ng-author-photo--compact .ng-author-photo-frame::after {
+      inset: 0.45rem;
+      border-radius: calc(var(--radius-md) - 4px);
+    }
+
+    .ng-author-photo--compact .ng-author-photo-frame img {
+      border-radius: calc(var(--radius-md) - 4px);
     }
 
     .ng-author-photo--compact .ng-author-photo-caption {
-      font-size: 0.95rem;
-      margin-top: 0.65rem;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
     }
