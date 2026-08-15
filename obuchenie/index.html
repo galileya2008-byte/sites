@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обучение созданию сайтов с AI — SITE LAB | Галина Оноприенко</title>
+  <meta name="description" content="Практическое обучение созданию сайтов с AI без программирования. За 4 недели вы создадите 4 проекта, освоите SEO и получите систему поиска первых клиентов. Старт 9 сентября.">
+  <meta name="author" content="Галина Оноприенко">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#06152F">
+  <link rel="canonical" href="https://expert-sites.ru/obuchenie/">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="SITE LAB — обучение созданию сайтов с AI">
+  <meta property="og:description" content="4 недели практики, 4 проекта в портфолио, SEO и поиск первых клиентов. Старт 9 сентября.">
+  <meta property="og:url" content="https://expert-sites.ru/obuchenie/">
+  <meta property="og:image" content="https://expert-sites.ru/images/site-lab-og.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Expert Sites", "item": "https://expert-sites.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "SITE LAB — обучение", "item": "https://expert-sites.ru/obuchenie/" }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://expert-sites.ru/obuchenie/#author",
+        "name": "Галина Оноприенко",
+        "jobTitle": "Промпт-инженер, разработчик сайтов для экспертов"
+      },
+      {
+        "@type": "Course",
+        "name": "SITE LAB — сайты как профессия",
+        "description": "Практическое обучение созданию сайтов с AI без программирования. Четыре проекта в портфолио, SEO под Яндекс и работа с клиентами.",
+        "url": "https://expert-sites.ru/obuchenie/",
+        "inLanguage": "ru-RU",
+        "provider": { "@id": "https://expert-sites.ru/obuchenie/#author" },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "online",
+          "startDate": "2026-09-09",
+          "duration": "P4W",
+          "instructor": { "@id": "https://expert-sites.ru/obuchenie/#author" }
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "35000",
+          "priceCurrency": "RUB",
+          "url": "https://нейро-галина.рф/new",
+          "availability": "https://schema.org/InStock",
+          "validThrough": "2026-08-29"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Нужно ли уметь программировать?", "acceptedAnswer": { "@type": "Answer", "text": "Нет. Программа построена на AI-инструментах, структуре сайта и пошаговой практике без написания кода." }},
+          { "@type": "Question", "name": "Где взять четыре проекта для практики?", "acceptedAnswer": { "@type": "Answer", "text": "Можно делать собственные проекты или брать реальные заказы. В бонусе — система поиска первых клиентов и сопровождение при выборе проектов." }},
+          { "@type": "Question", "name": "Можно ли брать деньги за учебные проекты?", "acceptedAnswer": { "@type": "Answer", "text": "Да, если это реальные заказы клиентов. Стартовые цены в программе — ориентир для оценки, а не гарантия дохода." }},
+          { "@type": "Question", "name": "Что делать, если клиент попросит сложные правки?", "acceptedAnswer": { "@type": "Answer", "text": "В программе разбираем бриф, фиксацию объёма работ, согласование правок и передачу проекта." }},
+          { "@type": "Question", "name": "Подойдёт ли программа действующему эксперту?", "acceptedAnswer": { "@type": "Answer", "text": "Да — для своих лендингов, воронок и продуктов, а также чтобы добавить услугу создания сайтов." }},
+          { "@type": "Question", "name": "Можно ли создавать сайты только для себя?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Четыре проекта можно направить на собственные задачи без обязательной работы с клиентами." }},
+          { "@type": "Question", "name": "Как работает рассрочка?", "acceptedAnswer": { "@type": "Answer", "text": "Рассрочка оформляется на странице оплаты до 12 месяцев. Ориентировочный платёж — от 2 917 ₽ в месяц." }},
+          { "@type": "Question", "name": "Сохранится ли доступ к материалам?", "acceptedAnswer": { "@type": "Answer", "text": "Условия доступа к материалам после программы уточняются на странице оплаты и в сопровождении потока." }},
+          { "@type": "Question", "name": "Нужны ли платные программы?", "acceptedAnswer": { "@type": "Answer", "text": "Базовый набор инструментов можно использовать на бесплатных тарифах. Платные сервисы — по желанию для отдельных задач." }},
+          { "@type": "Question", "name": "Смогу ли я подключить собственный домен?", "acceptedAnswer": { "@type": "Answer", "text": "Да. В программе есть модуль про домен, GitHub, SSL и базовую техническую публикацию." }}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-deep: #06152F;
+      --bg-mid: #0A2247;
+      --accent: #60A5FA;
+      --cyan: #22D3EE;
+      --gold: #D5AA64;
+      --text: #F8FAFC;
+      --text-2: rgba(248, 250, 252, 0.75);
+      --text-3: rgba(248, 250, 252, 0.55);
+      --glass: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+      --radius: 20px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --pad: clamp(3.5rem, 7vw, 6rem);
+      --pay: "https://нейро-галина.рф/new";
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 18px; }
+    body { font-family: var(--font); background: var(--bg-deep); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .sl-page { position: relative; min-height: 100vh; isolation: isolate; }
+    .sl-waves { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .sl-wave { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; animation: sl-drift 20s var(--ease) infinite alternate; }
+    .sl-wave--1 { width: 55vw; height: 55vw; background: #3b82f6; top: -15%; left: -10%; }
+    .sl-wave--2 { width: 45vw; height: 45vw; background: var(--cyan); bottom: 10%; right: -12%; animation-delay: -7s; }
+    .sl-grid { position: fixed; inset: 0; z-index: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black, transparent); pointer-events: none; }
+    .sl-wrap { width: min(1120px, 100% - 2rem); margin-inline: auto; position: relative; z-index: 1; }
+    .sl-section { padding-block: var(--pad); scroll-margin-top: 4.5rem; }
+    .sl-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .sl-h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
+    .sl-h2 { font-size: clamp(1.65rem, 3.5vw, 2.35rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .sl-lead { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-2); max-width: 52rem; }
+    .sl-glass { background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    @keyframes sl-drift { from { transform: translate(0,0) scale(1); } to { transform: translate(3%,4%) scale(1.05); } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .sl-wave, .sl-reveal { animation: none !important; transition: none !important; }
+      .sl-reveal { opacity: 1 !important; transform: none !important; }
+    }
+    .sl-skip { position: absolute; left: -9999px; z-index: 200; padding: 0.75rem 1rem; background: #fff; color: #000; }
+    .sl-skip:focus { left: 1rem; top: 1rem; }
+    /* Nav */
+    .sl-nav { position: sticky; top: 0; z-index: 100; background: rgba(6,21,47,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .sl-nav-inner { display: flex; align-items: center; gap: 0.75rem; min-height: 3.5rem; }
+    .sl-logo { font-weight: 800; font-size: 1rem; letter-spacing: 0.14em; text-decoration: none; white-space: nowrap; }
+    .sl-logo em { color: var(--gold); font-style: normal; }
+    .sl-nav-links { display: none; list-style: none; gap: 0.15rem; flex: 1; justify-content: center; flex-wrap: wrap; }
+    .sl-nav-links a { padding: 0.45rem 0.75rem; font-size: 0.8125rem; font-weight: 600; color: var(--text-2); text-decoration: none; border-radius: 999px; transition: background 0.2s, color 0.2s; }
+    .sl-nav-links a:hover, .sl-nav-links a:focus-visible { color: var(--text); background: rgba(255,255,255,0.08); outline: none; }
+    .sl-nav-toggle { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; margin-left: auto; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 12px; color: var(--text); cursor: pointer; }
+    .sl-nav-toggle svg { width: 1.35rem; height: 1.35rem; }
+    .sl-nav-cta { display: none; padding: 0.55rem 1.1rem; font-size: 0.875rem; font-weight: 700; text-decoration: none; border-radius: 999px; background: linear-gradient(135deg, var(--gold), #c4924f); color: #06152F; white-space: nowrap; }
+    .sl-nav-drawer { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(6,21,47,0.96); backdrop-filter: blur(12px); padding: 5rem 1.5rem 2rem; overflow-y: auto; }
+    .sl-nav-drawer.is-open { display: block; }
+    .sl-nav-drawer ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+    .sl-nav-drawer a { display: block; padding: 0.85rem 1rem; font-size: 1.125rem; font-weight: 600; text-decoration: none; border-radius: 12px; color: var(--text-2); }
+    .sl-nav-drawer a:hover, .sl-nav-drawer a:focus-visible { background: rgba(255,255,255,0.08); color: var(--text); outline: none; }
+    .sl-nav-drawer .sl-btn { margin-top: 1.5rem; width: 100%; justify-content: center; }
+    @media (min-width: 960px) {
+      .sl-nav-toggle { display: none; }
+      .sl-nav-links { display: flex; }
+      .sl-nav-cta { display: inline-flex; margin-left: 0.5rem; }
+    }
+    /* Buttons */
+    .sl-btn-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 1.75rem; }
+    .sl-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.95rem 1.5rem; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 999px; border: none; cursor: pointer; transition: transform 0.25s var(--ease), box-shadow 0.25s; }
+    .sl-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .sl-btn--gold { background: linear-gradient(135deg, var(--gold), #c4924f); color: #06152F; box-shadow: 0 8px 32px rgba(213,170,100,0.35); }
+    .sl-btn--gold:hover { transform: translateY(-2px); }
+    .sl-btn--ghost { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text); }
+    .sl-btn--ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+    /* Hero */
+    .sl-hero { padding-top: clamp(2.5rem, 6vw, 4rem); }
+    .sl-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 1.25rem; }
+    .sl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); animation: sl-pulse 2s ease infinite; }
+    @keyframes sl-pulse { 50% { opacity: 0.5; } }
+    .sl-params { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin: 2rem 0; }
+    .sl-param { padding: 1rem 1.1rem; font-size: 0.9375rem; font-weight: 600; color: var(--text-2); }
+    .sl-param strong { display: block; color: var(--text); font-size: 1.05rem; margin-bottom: 0.15rem; }
+    .sl-price-box { padding: 1.5rem; margin-top: 1.5rem; max-width: 28rem; border-left: 3px solid var(--gold); }
+    .sl-price-main { font-size: 2rem; font-weight: 800; color: var(--gold); }
+    .sl-price-note { font-size: 0.9375rem; color: var(--text-3); margin-top: 0.35rem; }
+    .sl-save { display: inline-block; margin-top: 0.75rem; padding: 0.35rem 0.75rem; font-size: 0.8125rem; font-weight: 700; background: rgba(34,211,238,0.12); border: 1px solid rgba(34,211,238,0.3); border-radius: 999px; color: var(--cyan); }
+    /* Cards grid */
+    .sl-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .sl-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .sl-card { padding: 1.5rem; transition: transform 0.35s var(--ease), border-color 0.35s; }
+    .sl-card:hover { transform: translateY(-4px); border-color: rgba(96,165,250,0.35); }
+    .sl-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .sl-card p { font-size: 0.9875rem; color: var(--text-2); }
+    .sl-card-price { font-size: 1.25rem; font-weight: 800; color: var(--accent); margin: 0.75rem 0 0.5rem; }
+    .sl-disclaimer { margin-top: 1.5rem; padding: 1rem 1.25rem; font-size: 0.9rem; color: var(--text-3); border-radius: var(--radius); background: rgba(255,255,255,0.03); border: 1px solid var(--border); }
+    .sl-sum { margin-top: 1.25rem; font-size: 1.125rem; font-weight: 700; color: var(--cyan); }
+    /* Bonus */
+    .sl-bonus { padding: clamp(2rem, 5vw, 3rem); border: 1px solid rgba(213,170,100,0.35); background: linear-gradient(135deg, rgba(213,170,100,0.08), rgba(96,165,250,0.06)); box-shadow: 0 24px 64px rgba(0,0,0,0.25); }
+    .sl-bonus ul { list-style: none; margin-top: 1.5rem; display: grid; gap: 0.65rem; }
+    .sl-bonus li { display: flex; gap: 0.65rem; font-size: 0.9875rem; color: var(--text-2); }
+    .sl-bonus li::before { content: "✦"; color: var(--gold); flex-shrink: 0; }
+    .sl-accent { margin-top: 1.25rem; font-weight: 600; color: var(--gold); }
+    /* Modules */
+    .sl-modules { display: grid; gap: 1rem; margin-top: 2rem; }
+    .sl-module { padding: 1.35rem 1.5rem; }
+    .sl-module-head { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .sl-module-num { font-size: 0.8125rem; font-weight: 800; color: var(--gold); letter-spacing: 0.08em; }
+    .sl-module h3 { font-size: 1.1rem; font-weight: 700; }
+    .sl-module ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 0.75rem; }
+    .sl-module li { font-size: 0.875rem; color: var(--text-3); padding: 0.25rem 0.65rem; background: rgba(255,255,255,0.04); border-radius: 999px; }
+    /* Format */
+    .sl-format-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.85rem; margin-top: 1.5rem; }
+    .sl-format-item { padding: 1rem; font-size: 0.9375rem; font-weight: 600; text-align: center; }
+    /* Author */
+    .sl-author { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
+    @media (min-width: 768px) { .sl-author { grid-template-columns: 220px 1fr; } }
+    .sl-author-photo { width: 100%; max-width: 220px; aspect-ratio: 1; border-radius: var(--radius); object-fit: cover; border: 1px solid var(--border); background: linear-gradient(135deg, var(--bg-mid), rgba(96,165,250,0.2)); }
+    .sl-author-fallback { display: grid; place-items: center; font-size: 3rem; font-weight: 800; color: var(--accent); }
+    .sl-author ul { list-style: none; margin-top: 1rem; display: grid; gap: 0.4rem; }
+    .sl-author li { font-size: 0.9875rem; color: var(--text-2); padding-left: 1.25rem; position: relative; }
+    .sl-author li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); }
+    /* Pricing */
+    .sl-pricing { text-align: center; max-width: 36rem; margin-inline: auto; padding: clamp(2rem, 5vw, 3rem); }
+    .sl-pricing-includes { list-style: none; text-align: left; margin: 1.5rem 0; display: grid; gap: 0.5rem; }
+    .sl-pricing-includes li { font-size: 0.9875rem; color: var(--text-2); padding-left: 1.5rem; position: relative; }
+    .sl-pricing-includes li::before { content: "✓"; position: absolute; left: 0; color: #34d399; font-weight: 700; }
+    /* FAQ */
+    .sl-faq { max-width: 48rem; margin-top: 2rem; display: grid; gap: 0.65rem; }
+    .sl-faq-item { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--glass); }
+    .sl-faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem; font-size: 1rem; font-weight: 700; text-align: left; background: transparent; border: none; color: var(--text); cursor: pointer; }
+    .sl-faq-q:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .sl-faq-q svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; transition: transform 0.3s var(--ease); color: var(--accent); }
+    .sl-faq-item.is-open .sl-faq-q svg { transform: rotate(180deg); }
+    .sl-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
+    .sl-faq-a-inner { padding: 0 1.25rem 1.1rem; font-size: 0.9875rem; color: var(--text-2); }
+    .sl-faq-item.is-open .sl-faq-a { max-height: 20rem; }
+    /* CTA */
+    .sl-cta { text-align: center; padding: clamp(3rem, 6vw, 5rem); }
+    /* Footer */
+    .sl-footer { padding: 2rem 0 3rem; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--text-3); }
+    .sl-footer a { color: var(--accent); text-decoration: none; }
+    .sl-footer a:hover { text-decoration: underline; }
+    /* Reveal */
+    .sl-reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .sl-reveal.is-visible { opacity: 1; transform: none; }
+    .sl-header-gap { margin-bottom: 2.5rem; }
+    .sl-list-check { list-style: none; margin-top: 1rem; display: grid; gap: 0.45rem; }
+    .sl-list-check li { padding-left: 1.5rem; position: relative; color: var(--text-2); font-size: 0.9875rem; }
+    .sl-list-check li::before { content: "✓"; position: absolute; left: 0; color: #34d399; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="sl-page">
+    <a class="sl-skip" href="#main">Перейти к содержанию</a>
+    <div class="sl-waves" aria-hidden="true">
+      <div class="sl-wave sl-wave--1"></div>
+      <div class="sl-wave sl-wave--2"></div>
+    </div>
+    <div class="sl-grid" aria-hidden="true"></div>
+
+    <header class="sl-nav">
+      <div class="sl-wrap sl-nav-inner">
+        <a class="sl-logo" href="/obuchenie/">SITE <em>LAB</em></a>
+        <ul class="sl-nav-links" role="list">
+          <li><a href="#about">О программе</a></li>
+          <li><a href="#practice">Практика</a></li>
+          <li><a href="#program">Программа</a></li>
+          <li><a href="#audience">Для кого</a></li>
+          <li><a href="#pricing">Стоимость</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a class="sl-nav-cta" href="https://нейро-галина.рф/new">Занять место</a>
+        <button type="button" class="sl-nav-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="sl-drawer" id="sl-nav-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <nav class="sl-nav-drawer" id="sl-drawer" aria-label="Мобильное меню" hidden>
+      <ul>
+        <li><a href="#about">О программе</a></li>
+        <li><a href="#practice">Практика</a></li>
+        <li><a href="#program">Программа</a></li>
+        <li><a href="#audience">Для кого</a></li>
+        <li><a href="#pricing">Стоимость</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="/">Expert Sites — услуги</a></li>
+      </ul>
+      <a class="sl-btn sl-btn--gold sl-btn" href="https://нейро-галина.рф/new">Занять место</a>
+    </nav>
+
+    <main id="main">
+      <section class="sl-section sl-hero sl-wrap">
+        <div class="sl-badge sl-glass">
+          <span class="sl-dot" aria-hidden="true"></span>
+          Новый поток · старт 9 сентября
+        </div>
+        <h1 class="sl-h1">Научитесь создавать сайты, за которые клиенты готовы платить</h1>
+        <p class="sl-lead">За 4 недели вы освоите создание современных сайтов с помощью AI, соберёте четыре проекта для портфолио и получите систему поиска первых клиентов. Без программирования — с сопровождением Галины Оноприенко.</p>
+        <div class="sl-params">
+          <div class="sl-param sl-glass"><strong>4 недели</strong> практики</div>
+          <div class="sl-param sl-glass"><strong>4 сайта</strong> в портфолио</div>
+          <div class="sl-param sl-glass"><strong>Живые</strong> разборы</div>
+          <div class="sl-param sl-glass"><strong>Сопровождение</strong> автора</div>
+          <div class="sl-param sl-glass"><strong>Старт</strong> 9 сентября</div>
+        </div>
+        <div class="sl-price-box sl-glass">
+          <div class="sl-price-main">35 000 ₽</div>
+          <p class="sl-price-note">до 29 августа · после — 50 000 ₽</p>
+          <p class="sl-price-note">Рассрочка от 2 917 ₽/мес до 12 месяцев</p>
+          <span class="sl-save">Экономия до 29 августа — 15 000 ₽</span>
+        </div>
+        <div class="sl-btn-row">
+          <a class="sl-btn sl-btn--gold" href="https://нейро-галина.рф/new">Забронировать участие за 35 000 ₽</a>
+          <a class="sl-btn sl-btn--ghost" href="#program">Посмотреть программу</a>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="about">
+        <div class="sl-eyebrow">О программе</div>
+        <h2 class="sl-h2">Умения пользоваться AI уже недостаточно. Нужен навык, который можно превратить в конкретную услугу</h2>
+        <p class="sl-lead">Эксперты, предприниматели и специалисты нуждаются не просто в красивых страницах. Им нужны сайты, которые представляют услуги, собирают заявки, продают продукты и помогают получать поисковый трафик. После обучения участник сможет создавать такие сайты для себя и для клиентов.</p>
+        <div class="sl-grid-3">
+          <article class="sl-card sl-glass"><h3>Понятный результат</h3><p>Востребованный навык с измеримым итогом — готовый сайт, а не абстрактные знания.</p></article>
+          <article class="sl-card sl-glass"><h3>Удалённая работа</h3><p>Создание сайтов можно вести из любой точки, согласуя проекты онлайн.</p></article>
+          <article class="sl-card sl-glass"><h3>Чек выше контента</h3><p>Услуга сайта ценится выше, чем оформление соцсетей и разовый контент.</p></article>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="practice">
+        <div class="sl-eyebrow">Практика</div>
+        <h2 class="sl-h2">Вы выходите не с конспектом, а с четырьмя готовыми проектами</h2>
+        <p class="sl-lead">Во время обучения участники создают четыре разных сайта. Это могут быть собственные проекты или реальные клиентские заказы, выполненные под сопровождением автора программы.</p>
+        <div class="sl-grid-2">
+          <article class="sl-card sl-glass">
+            <h3>1. Лендинг-визитка</h3>
+            <div class="sl-card-price">от 7 000 ₽ для клиента</div>
+            <p>Услуги, экспертность, переходы в соцсети и продажа основной услуги.</p>
+          </article>
+          <article class="sl-card sl-glass">
+            <h3>2. Лендинг с интерактивом или квизом</h3>
+            <div class="sl-card-price">от 12 000 ₽</div>
+            <p>Современный лид-магнит и мини-воронка для вовлечения аудитории и сбора заявок.</p>
+          </article>
+          <article class="sl-card sl-glass">
+            <h3>3. Многостраничный сайт</h3>
+            <div class="sl-card-price">от 20 000 ₽</div>
+            <p>Несколько направлений, страницы услуг, навигация, формы связи и продающие блоки.</p>
+          </article>
+          <article class="sl-card sl-glass">
+            <h3>4. Сайт с админ-панелью</h3>
+            <div class="sl-card-price">от 30 000 ₽</div>
+            <p>Управление контентом, галерея, несколько услуг, формы и расширенная структура.</p>
+          </article>
+        </div>
+        <p class="sl-sum">Потенциальная суммарная стоимость четырёх проектов — 69 000 ₽</p>
+        <p class="sl-disclaimer">Это пример стартовой стоимости проектов, а не гарантия дохода. Результат зависит от действий участника, выбранной ниши и договорённостей с клиентами.</p>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal">
+        <div class="sl-bonus sl-glass sl-reveal">
+          <div class="sl-eyebrow">Бонус быстрого старта</div>
+          <h2 class="sl-h2">Система поиска первых клиентов</h2>
+          <p class="sl-lead">Чтобы не искать проекты для практики в последний момент.</p>
+          <ul>
+            <li>Готовый текст предложения для подписчиков</li>
+            <li>Четыре формата сайтов со стартовыми ценами</li>
+            <li>Сценарий публикации предложения в соцсетях и сообществах</li>
+            <li>Шаблон личного сообщения потенциальному клиенту</li>
+            <li>Структура первичного брифа</li>
+            <li>Шаблон фиксации объёма работ и правок</li>
+            <li>Помощь в выборе первых проектов</li>
+            <li>Сопровождение при создании сайтов для реальных клиентов</li>
+          </ul>
+          <p class="sl-accent">Вы можете начать искать клиентов сразу после входа в программу и создавать их сайты под моим контролем.</p>
+          <div class="sl-btn-row">
+            <a class="sl-btn sl-btn--gold" href="https://нейро-галина.рф/new">Войти в программу и получить бонус</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="program">
+        <div class="sl-eyebrow">Программа</div>
+        <h2 class="sl-h2">8 модулей — от стратегии до работы с клиентом</h2>
+        <div class="sl-modules">
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 1</span><h3>Стратегия сайта</h3></div><ul><li>задача сайта</li><li>ЦА</li><li>позиционирование</li><li>оффер</li><li>структура</li><li>путь пользователя</li></ul></article>
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 2</span><h3>Работа с AI</h3></div><ul><li>инструменты</li><li>промпты структуры</li><li>тексты</li><li>визуальная концепция</li><li>ТЗ</li><li>проверка AI</li></ul></article>
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 3</span><h3>Лендинги и визитки</h3></div><ul><li>первый экран</li><li>продающая структура</li><li>услуги</li><li>кейсы</li><li>CTA</li><li>мобильная версия</li></ul></article>
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 4</span><h3>Интерактивы и квизы</h3></div><ul><li>механики вовлечения</li><li>лид-магниты</li><li>квизы</li><li>мини-воронки</li><li>сбор обращений</li></ul></article>
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 5</span><h3>Многостраничные сайты</h3></div><ul><li>архитектура</li><li>навигация</li><li>страницы услуг</li><li>портфолио</li><li>галереи</li><li>формы</li><li>юридические страницы</li></ul></article>
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 6</span><h3>Домен и публикация</h3></div><ul><li>GitHub</li><li>домен</li><li>SSL</li><li>технастройка</li><li>обновление сайта</li></ul></article>
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 7</span><h3>SEO под Яндекс</h3></div><ul><li>семантика</li><li>title и description</li><li>заголовки</li><li>sitemap</li><li>robots</li><li>canonical</li><li>Schema.org</li><li>Вебмастер</li><li>индексация</li></ul></article>
+          <article class="sl-module sl-glass"><div class="sl-module-head"><span class="sl-module-num">Модуль 8</span><h3>Работа с клиентом</h3></div><ul><li>поиск заказчиков</li><li>бриф</li><li>оценка</li><li>презентация</li><li>согласование</li><li>правки</li><li>передача</li><li>сопровождение</li></ul></article>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal">
+        <div class="sl-eyebrow">Формат</div>
+        <h2 class="sl-h2">Четыре недели работы над реальными проектами</h2>
+        <div class="sl-format-grid">
+          <div class="sl-format-item sl-glass">Старт — 9 сентября</div>
+          <div class="sl-format-item sl-glass">4 недели</div>
+          <div class="sl-format-item sl-glass">Уроки и материалы</div>
+          <div class="sl-format-item sl-glass">Практические задания</div>
+          <div class="sl-format-item sl-glass">Живые встречи</div>
+          <div class="sl-format-item sl-glass">Разборы сайтов</div>
+          <div class="sl-format-item sl-glass">Обратная связь</div>
+          <div class="sl-format-item sl-glass">Сопровождение клиентских проектов</div>
+          <div class="sl-format-item sl-glass">Шаблоны и промпты</div>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="audience">
+        <div class="sl-eyebrow">Для кого</div>
+        <h2 class="sl-h2">Кому подойдёт SITE LAB</h2>
+        <div class="sl-grid-3">
+          <article class="sl-card sl-glass"><h3>Эксперты мягких ниш</h3><p>Сайты для себя и своих продуктов.</p></article>
+          <article class="sl-card sl-glass"><h3>SMM-специалисты</h3><p>Услуга с более высоким чеком, чем ведение соцсетей.</p></article>
+          <article class="sl-card sl-glass"><h3>Контент-маркетологи</h3><p>Полные digital-системы, а не отдельные материалы.</p></article>
+          <article class="sl-card sl-glass"><h3>Промпт-инженеры</h3><p>Коммерческие проекты на базе AI-навыков.</p></article>
+          <article class="sl-card sl-glass"><h3>Начинающие фрилансеры</h3><p>Профессия и первые работы в портфолио.</p></article>
+          <article class="sl-card sl-glass"><h3>Создатели онлайн-продуктов</h3><p>Самостоятельный запуск лендингов и воронок.</p></article>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal">
+        <div class="sl-eyebrow">Результат</div>
+        <h2 class="sl-h2">После программы участник сможет</h2>
+        <ul class="sl-list-check">
+          <li>Создавать сайты без программирования</li>
+          <li>Собирать лендинги и многостраничные проекты</li>
+          <li>Создавать квизы и интерактивы</li>
+          <li>Подключать домены и публиковать через GitHub</li>
+          <li>Готовить проекты к индексации в Яндексе</li>
+          <li>Работать с заказчиком: бриф, правки, передача</li>
+          <li>Рассчитывать стоимость проекта</li>
+          <li>Показывать четыре проекта в портфолио</li>
+          <li>Продавать создание сайтов как отдельную услугу</li>
+        </ul>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="author">
+        <div class="sl-eyebrow">Автор</div>
+        <div class="sl-author">
+          <div>
+            <img class="sl-author-photo" src="/images/galina-onoprienko.png" width="220" height="220" alt="Галина Оноприенко" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+            <div class="sl-author-photo sl-author-fallback" style="display:none" aria-hidden="true">ГО</div>
+          </div>
+          <div>
+            <h2 class="sl-h2">Галина Оноприенко</h2>
+            <p class="sl-lead">Промпт-инженер, SMM-стратег, контент-маркетолог и разработчик сайтов для экспертов. Более 15 лет работает с продвижением проектов в интернете. Создаёт сайты, лендинги, интерактивы и AI-системы для специалистов и онлайн-бизнеса.</p>
+            <ul>
+              <li>Опыт в интернет-продвижении более 15 лет</li>
+              <li>Разработка сайтов для экспертов</li>
+              <li>AI и промпт-инжиниринг</li>
+              <li>SEO под Яндекс</li>
+              <li>Стратегия и монетизация</li>
+              <li>Сопровождение специалистов мягких ниш</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="pricing">
+        <div class="sl-pricing sl-glass">
+          <div class="sl-eyebrow" style="justify-content:center">Стоимость</div>
+          <h2 class="sl-h2">Начните обучение по цене раннего участия</h2>
+          <div class="sl-price-main" style="font-size:2.5rem;margin:1rem 0">35 000 ₽</div>
+          <p class="sl-price-note">до 29 августа включительно · с 30 августа — 50 000 ₽</p>
+          <p class="sl-price-note">Рассрочка до 12 месяцев · от 2 917 ₽/мес</p>
+          <ul class="sl-pricing-includes">
+            <li>Вся программа из 8 модулей</li>
+            <li>Четыре проекта в портфолио</li>
+            <li>Шаблоны и AI-промпты</li>
+            <li>SEO под Яндекс</li>
+            <li>Живые встречи и разборы</li>
+            <li>Сопровождение</li>
+            <li>Бонус: поиск первых клиентов</li>
+          </ul>
+          <a class="sl-btn sl-btn--gold" href="https://нейро-галина.рф/new" style="width:100%;max-width:20rem;margin-inline:auto">Занять место за 35 000 ₽</a>
+          <p class="sl-price-note" style="margin-top:1rem">Старт 9 сентября · продолжительность — 4 недели</p>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="faq">
+        <div class="sl-eyebrow">FAQ</div>
+        <h2 class="sl-h2">Частые вопросы</h2>
+        <div class="sl-faq" role="list">
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Нужно ли уметь программировать?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Нет. Программа построена на AI-инструментах, структуре сайта и пошаговой практике без написания кода.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Где взять четыре проекта для практики?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Можно делать собственные проекты или брать реальные заказы. В бонусе — система поиска первых клиентов и сопровождение при выборе проектов.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Можно ли брать деньги за учебные проекты?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Да, если это реальные заказы клиентов. Стартовые цены в программе — ориентир для оценки, а не гарантия дохода.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Что делать, если клиент попросит сложные правки?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">В программе разбираем бриф, фиксацию объёма работ, согласование правок и передачу проекта.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Подойдёт ли программа действующему эксперту?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Да — для своих лендингов, воронок и продуктов, а также чтобы добавить услугу создания сайтов.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Можно ли создавать сайты только для себя?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Да. Четыре проекта можно направить на собственные задачи без обязательной работы с клиентами.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Как работает рассрочка?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Рассрочка оформляется на странице оплаты до 12 месяцев. Ориентировочный платёж — от 2 917 ₽ в месяц.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Сохранится ли доступ к материалам?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Условия доступа к материалам после программы уточняются на странице оплаты и в сопровождении потока.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Нужны ли платные программы?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Базовый набор инструментов можно использовать на бесплатных тарифах. Платные сервисы — по желанию.</div></div></div>
+          <div class="sl-faq-item" role="listitem"><button type="button" class="sl-faq-q" aria-expanded="false">Смогу ли я подключить собственный домен?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="sl-faq-a" hidden><div class="sl-faq-a-inner">Да. В программе есть модуль про домен, GitHub, SSL и базовую техническую публикацию.</div></div></div>
+        </div>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal">
+        <div class="sl-cta sl-glass">
+          <h2 class="sl-h2">Создайте первый сайт и превратите новый навык в востребованную услугу</h2>
+          <p class="sl-lead" style="margin-inline:auto;margin-bottom:1.5rem">Начните обучение 9 сентября. До 29 августа стоимость участия составляет 35 000 ₽.</p>
+          <a class="sl-btn sl-btn--gold" href="https://нейро-галина.рф/new">Записаться в SITE LAB</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="sl-footer sl-wrap">
+      <p>SITE LAB — программа Галины Оноприенко · <a href="/">Expert Sites</a> · <a href="/obuchenie/">Обучение</a></p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("sl-nav-toggle");
+      var drawer = document.getElementById("sl-drawer");
+      if (toggle && drawer) {
+        function closeDrawer() {
+          drawer.classList.remove("is-open");
+          drawer.hidden = true;
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Открыть меню");
+        }
+        toggle.addEventListener("click", function () {
+          var open = drawer.classList.toggle("is-open");
+          drawer.hidden = !open;
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          toggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+        });
+        drawer.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", closeDrawer);
+        });
+      }
+      document.querySelectorAll(".sl-faq-q").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var item = btn.closest(".sl-faq-item");
+          var panel = item.querySelector(".sl-faq-a");
+          var open = item.classList.toggle("is-open");
+          btn.setAttribute("aria-expanded", open ? "true" : "false");
+          panel.hidden = !open;
+        });
+      });
+      if ("IntersectionObserver" in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add("is-visible"); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.08 });
+        document.querySelectorAll(".sl-reveal").forEach(function (el) { obs.observe(el); });
+      } else {
+        document.querySelectorAll(".sl-reveal").forEach(function (el) { el.classList.add("is-visible"); });
+      }
+    })();
+  </script>
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111459417', 'ym');
+    ym(111459417, 'init', {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/111459417" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+</body>
+</html>

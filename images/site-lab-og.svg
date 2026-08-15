@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="SITE LAB  A09BK :0: ?@>D5AA8O">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06152F"/>
+      <stop offset="100%" stop-color="#0A2247"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <text x="80" y="200" fill="#D5AA64" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="0.15em">SITE LAB</text>
+  <text x="80" y="290" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700">!09BK :0: ?@>D5AA8O</text>
+  <text x="80" y="360" fill="#60A5FA" font-family="Segoe UI, Arial, sans-serif" font-size="26">4 =545;8 · 4 ?@>5:B0 · AB0@B 9 A5=BO1@O</text>
+  <text x="80" y="520" fill="rgba(248,250,252,0.65)" font-family="Segoe UI, Arial, sans-serif" font-size="22">expert-sites.ru/obuchenie · 0;8=0 =>?@85=:></text>
+</svg>
