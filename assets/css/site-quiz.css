@@ -1,0 +1,248 @@
+.ng-quiz {
+  max-width: 42rem;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border-radius: 24px;
+}
+
+.ng-quiz__progress {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.ng-quiz__progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22d3ee, #60a5fa);
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ng-quiz__step-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.52);
+  margin-bottom: 0.75rem;
+}
+
+.ng-quiz__question {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.ng-quiz__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ng-quiz__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  width: 100%;
+  padding: 1rem 1.15rem;
+  text-align: left;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ng-quiz__option:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  background: rgba(96, 165, 250, 0.08);
+}
+
+.ng-quiz__option:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+
+.ng-quiz__option.is-selected {
+  border-color: rgba(34, 211, 238, 0.55);
+  background: rgba(34, 211, 238, 0.1);
+  transform: translateX(4px);
+}
+
+.ng-quiz__option-marker {
+  flex-shrink: 0;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.1rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ng-quiz__option.is-selected .ng-quiz__option-marker {
+  border-color: #22d3ee;
+  background: radial-gradient(circle at 50% 50%, #22d3ee 40%, transparent 42%);
+}
+
+.ng-quiz__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.ng-quiz__btn {
+  padding: 0.75rem 1.35rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.ng-quiz__btn:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+
+.ng-quiz__btn--ghost {
+  color: rgba(248, 250, 252, 0.72);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ng-quiz__btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #f8fafc;
+}
+
+.ng-quiz__btn--primary {
+  color: #06152f;
+  background: linear-gradient(135deg, #60a5fa, #22d3ee);
+  border: none;
+}
+
+.ng-quiz__btn--primary:hover {
+  transform: translateY(-1px);
+}
+
+.ng-quiz__result {
+  animation: ng-quiz-fade 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ng-quiz__result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #d5aa64;
+  background: rgba(213, 170, 100, 0.12);
+  border: 1px solid rgba(213, 170, 100, 0.35);
+  border-radius: 999px;
+}
+
+.ng-quiz__result-title {
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.ng-quiz__result-text {
+  color: rgba(248, 250, 252, 0.78);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.ng-quiz__result-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ng-quiz__result-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.975rem;
+  color: rgba(248, 250, 252, 0.85);
+}
+
+.ng-quiz__result-list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.55rem;
+  border-radius: 50%;
+  background: #22d3ee;
+}
+
+.ng-quiz__note {
+  max-width: 42rem;
+  margin: 1.75rem auto 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(248, 250, 252, 0.65);
+  text-align: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(96, 165, 250, 0.25);
+}
+
+.ng-quiz__note a {
+  color: #60a5fa;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ng-quiz__note a:hover {
+  color: #22d3ee;
+}
+
+@keyframes ng-quiz-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ng-quiz__progress-bar,
+  .ng-quiz__option,
+  .ng-quiz__btn--primary,
+  .ng-quiz__result {
+    transition: none;
+    animation: none;
+  }
+}

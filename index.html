@@ -22,6 +22,7 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/css/back-to-top.css">
+  <link rel="stylesheet" href="/assets/css/site-quiz.css">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Сайты для экспертов — Галина Оноприенко">
@@ -542,6 +543,25 @@
       font-weight: 600;
     }
 
+    .ng-hero-quiz-hint {
+      margin-top: 1.25rem;
+      font-size: 1rem;
+      animation: ng-fade-up 0.8s var(--ease-out) 0.55s both;
+    }
+
+    .ng-hero-quiz-hint a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: rgba(34, 211, 238, 0.4);
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    .ng-hero-quiz-hint a:hover {
+      color: var(--accent-bright);
+      text-decoration-color: var(--accent-bright);
+    }
+
     .ng-gift-promo {
       margin-top: 1.25rem;
       padding: 1.25rem 1.5rem;
@@ -648,7 +668,18 @@
       color: var(--text-secondary);
     }
 
-    /* Pricing */
+.ng-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
     .ng-pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
@@ -1624,6 +1655,7 @@
         <a class="ng-nav-brand" href="#">Сайты для <span>экспертов</span></a>
         <div class="ng-nav-links" role="list">
           <a href="#why-expert" data-nav="why-expert">Зачем сайт</a>
+          <a href="#site-quiz" data-nav="site-quiz">Подбор формата</a>
           <a href="#pricing" data-nav="pricing">Тарифы</a>
           <a href="#included" data-nav="included">Состав</a>
           <a href="#roi" data-nav="roi">Окупаемость</a>
@@ -1672,9 +1704,9 @@
           </svg>
           <span>Срок изготовления: <strong>3–12 дней</strong> — в зависимости от тарифа и объёма согласований</span>
         </div>
-          </div>
-          <p>Интерактив помогает лучше прогреть аудиторию под ваши услуги и улучшить положение сайта в поисковой выдаче.</p>
-        </div>
+        <p class="ng-hero-quiz-hint">
+          <a href="#site-quiz">Пройти мини-квиз: какой формат сайта вам подходит →</a>
+        </p>
       </div>
     </header>
 
@@ -1784,6 +1816,24 @@
             <p>Политика конфиденциальности, согласие на обработку данных — соответствие требованиям РФ.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="ng-section ng-reveal" id="site-quiz" aria-labelledby="site-quiz-title">
+      <div class="ng-container">
+        <div class="ng-section-header">
+          <div class="ng-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Интерактив
+          </div>
+          <h2 class="ng-h2" id="site-quiz-title">Какой формат сайта вам подходит?</h2>
+          <p class="ng-sub">Ответьте на 4 коротких вопроса — получите рекомендацию: визитка, полный сайт или обучение SITE LAB.</p>
+        </div>
+        <div class="ng-quiz ng-glass" id="ng-site-quiz" role="region" aria-label="Квиз подбора формата сайта"></div>
+        <p class="ng-quiz__note">
+          Этот квиз — рабочий пример интерактива для вовлечения и прогрева аудитории.
+          В программе <a href="/obuchenie/">SITE LAB</a> ученики учатся создавать такие же квизы, мини-воронки и лид-магниты для своих клиентов.
+        </p>
       </div>
     </section>
 
@@ -2310,7 +2360,7 @@
       links.forEach(function (a) {
         byId[a.getAttribute("data-nav")] = a;
       });
-      var sections = ["why-expert", "pricing", "included", "roi", "seo-legal", "contact"].map(function (id) {
+      var sections = ["why-expert", "site-quiz", "pricing", "included", "roi", "seo-legal", "contact"].map(function (id) {
         return document.getElementById(id);
       }).filter(Boolean);
       if (!sections.length) return;
@@ -2328,6 +2378,7 @@
       sections.forEach(function (el) { observer.observe(el); });
     })();
   </script>
+  <script src="/assets/js/site-quiz.js" defer></script>
   <script src="/assets/js/back-to-top.js" defer></script>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
