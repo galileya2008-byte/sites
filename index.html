@@ -646,12 +646,126 @@
 
     .ng-benefit-card {
       padding: 1.75rem;
-      transition: transform 0.4s var(--ease-out), border-color 0.4s;
+      transition: transform 0.4s var(--ease-out), border-color 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ng-benefit-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      opacity: 0.85;
     }
 
     .ng-benefit-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(96, 165, 250, 0.35);
+    }
+
+    .ng-benefit-card--blue {
+      background: rgba(59, 130, 246, 0.09);
+      border-color: rgba(96, 165, 250, 0.32);
+    }
+    .ng-benefit-card--blue::before {
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    }
+    .ng-benefit-card--blue:hover {
+      border-color: rgba(96, 165, 250, 0.5);
+      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.18);
+    }
+    .ng-benefit-card--blue .ng-icon-wrap {
+      background: rgba(59, 130, 246, 0.22);
+      border-color: rgba(96, 165, 250, 0.4);
+      color: #93c5fd;
+    }
+
+    .ng-benefit-card--cyan {
+      background: rgba(34, 211, 238, 0.07);
+      border-color: rgba(34, 211, 238, 0.28);
+    }
+    .ng-benefit-card--cyan::before {
+      background: linear-gradient(90deg, #06b6d4, #22d3ee);
+    }
+    .ng-benefit-card--cyan:hover {
+      border-color: rgba(34, 211, 238, 0.45);
+      box-shadow: 0 12px 40px rgba(34, 211, 238, 0.14);
+    }
+    .ng-benefit-card--cyan .ng-icon-wrap {
+      background: rgba(34, 211, 238, 0.16);
+      border-color: rgba(34, 211, 238, 0.35);
+      color: #67e8f9;
+    }
+
+    .ng-benefit-card--gold {
+      background: rgba(213, 170, 100, 0.08);
+      border-color: rgba(213, 170, 100, 0.3);
+    }
+    .ng-benefit-card--gold::before {
+      background: linear-gradient(90deg, #b8924f, #d5aa64);
+    }
+    .ng-benefit-card--gold:hover {
+      border-color: rgba(213, 170, 100, 0.48);
+      box-shadow: 0 12px 40px rgba(213, 170, 100, 0.12);
+    }
+    .ng-benefit-card--gold .ng-icon-wrap {
+      background: rgba(213, 170, 100, 0.18);
+      border-color: rgba(213, 170, 100, 0.38);
+      color: #e8c88a;
+    }
+
+    .ng-benefit-card--indigo {
+      background: rgba(99, 102, 241, 0.08);
+      border-color: rgba(129, 140, 248, 0.28);
+    }
+    .ng-benefit-card--indigo::before {
+      background: linear-gradient(90deg, #4f46e5, #818cf8);
+    }
+    .ng-benefit-card--indigo:hover {
+      border-color: rgba(129, 140, 248, 0.45);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+    }
+    .ng-benefit-card--indigo .ng-icon-wrap {
+      background: rgba(99, 102, 241, 0.18);
+      border-color: rgba(129, 140, 248, 0.35);
+      color: #a5b4fc;
+    }
+
+    .ng-benefit-card--teal {
+      background: rgba(20, 184, 166, 0.07);
+      border-color: rgba(45, 212, 191, 0.26);
+    }
+    .ng-benefit-card--teal::before {
+      background: linear-gradient(90deg, #0d9488, #2dd4bf);
+    }
+    .ng-benefit-card--teal:hover {
+      border-color: rgba(45, 212, 191, 0.42);
+      box-shadow: 0 12px 40px rgba(20, 184, 166, 0.13);
+    }
+    .ng-benefit-card--teal .ng-icon-wrap {
+      background: rgba(20, 184, 166, 0.16);
+      border-color: rgba(45, 212, 191, 0.32);
+      color: #5eead4;
+    }
+
+    .ng-benefit-card--sky {
+      background: rgba(14, 116, 214, 0.1);
+      border-color: rgba(56, 189, 248, 0.26);
+    }
+    .ng-benefit-card--sky::before {
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+    }
+    .ng-benefit-card--sky:hover {
+      border-color: rgba(56, 189, 248, 0.42);
+      box-shadow: 0 12px 40px rgba(14, 116, 214, 0.16);
+    }
+    .ng-benefit-card--sky .ng-icon-wrap {
+      background: rgba(14, 116, 214, 0.2);
+      border-color: rgba(56, 189, 248, 0.34);
+      color: #7dd3fc;
     }
 
     .ng-icon-wrap {
@@ -665,11 +779,19 @@
       border: 1px solid rgba(96, 165, 250, 0.25);
       margin-bottom: 1.25rem;
       color: var(--accent-bright);
+      transition: background 0.35s var(--ease-out), border-color 0.35s;
     }
 
     .ng-icon-wrap svg {
       width: 24px;
       height: 24px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ng-benefit-card,
+      .ng-benefit-card .ng-icon-wrap {
+        transition: none;
+      }
     }
 
     .ng-benefit-card h3 {
@@ -1790,42 +1912,42 @@
           <p class="ng-sub">Не шаблон «на скорую руку», а инструмент продаж с продуманной структурой и визуалом премиум-класса.</p>
         </div>
         <div class="ng-benefits-grid">
-          <article class="ng-benefit-card ng-glass">
+          <article class="ng-benefit-card ng-glass ng-benefit-card--cyan">
             <div class="ng-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
             <h3>Быстрый запуск</h3>
             <p>Сайт готов к приёму заявок за <strong>3–12 дней</strong> — без месяцев согласований и бесконечных правок.</p>
           </article>
-          <article class="ng-benefit-card ng-glass">
+          <article class="ng-benefit-card ng-glass ng-benefit-card--gold">
             <div class="ng-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3>Доверие с первого экрана</h3>
             <p>Современный дизайн уровня SaaS повышает воспринимаемую ценность ваших услуг и конверсию в заявку.</p>
           </article>
-          <article class="ng-benefit-card ng-glass">
+          <article class="ng-benefit-card ng-glass ng-benefit-card--blue">
             <div class="ng-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </div>
             <h3>Адаптив на все устройства</h3>
             <p>Идеальное отображение на смартфонах, планшетах и десктопах — большинство клиентов заходит с телефона.</p>
           </article>
-          <article class="ng-benefit-card ng-glass">
+          <article class="ng-benefit-card ng-glass ng-benefit-card--indigo">
             <div class="ng-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
             <h3>Фокус на заявках</h3>
             <p>Понятные призывы к действию, формы и сценарии — посетитель понимает, что делать дальше.</p>
           </article>
-          <article class="ng-benefit-card ng-glass">
+          <article class="ng-benefit-card ng-glass ng-benefit-card--sky">
             <div class="ng-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </div>
             <h3>База под SEO</h3>
             <p>Структура заголовков, мета-теги и скорость загрузки — фундамент для продвижения в Яндексе.</p>
           </article>
-          <article class="ng-benefit-card ng-glass">
+          <article class="ng-benefit-card ng-glass ng-benefit-card--teal">
             <div class="ng-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
             </div>
