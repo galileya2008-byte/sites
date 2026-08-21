@@ -1341,6 +1341,21 @@
     .ng-nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; }
     .ng-nav-links a:hover, .ng-nav-links a[aria-current="page"] { color: var(--accent-bright); }
     .ng-page-hero { padding-top: clamp(3rem, 8vw, 5rem); padding-bottom: clamp(2.5rem, 6vw, 4rem); text-align: center; }
+
+    .ng-hero-offer {
+      font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.22;
+      margin-bottom: 1rem;
+      color: var(--accent-bright);
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .ng-page-hero .ng-h1 {
+      margin-bottom: 0.85rem;
+    }
     .ng-prose { max-width: 720px; margin-inline: auto; color: var(--text-secondary); font-size: 1.0625rem; }
     .ng-prose p { margin-bottom: 1.15rem; }
     .ng-prose h2 { font-size: 1.35rem; font-weight: 600; color: var(--text-primary); margin: 2rem 0 0.85rem; }
