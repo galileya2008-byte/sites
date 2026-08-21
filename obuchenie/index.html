@@ -234,6 +234,114 @@
     .sl-list-check { list-style: none; margin-top: 1rem; display: grid; gap: 0.45rem; }
     .sl-list-check li { padding-left: 1.5rem; position: relative; color: var(--text-2); font-size: 0.9875rem; }
     .sl-list-check li::before { content: "✓"; position: absolute; left: 0; color: #34d399; font-weight: 700; }
+    /* Graduates */
+    .sl-graduates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .sl-graduate {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+      transition: transform 0.35s var(--ease), border-color 0.35s, box-shadow 0.35s;
+    }
+    .sl-graduate:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96, 165, 250, 0.35);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
+    }
+    .sl-graduate-preview {
+      aspect-ratio: 16 / 10;
+      background:
+        linear-gradient(145deg, rgba(6, 21, 47, 0.95), rgba(10, 34, 71, 0.88)),
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: auto, 24px 24px, 24px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      position: relative;
+    }
+    .sl-graduate-preview::before {
+      content: "";
+      position: absolute;
+      top: 12%;
+      left: 8%;
+      right: 8%;
+      height: 8%;
+      border-radius: 4px;
+      background: rgba(96, 165, 250, 0.35);
+    }
+    .sl-graduate-preview::after {
+      content: "";
+      position: absolute;
+      top: 28%;
+      left: 8%;
+      width: 55%;
+      height: 28%;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .sl-graduate-preview-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      position: relative;
+      z-index: 1;
+    }
+    .sl-graduate-body { padding: 1.35rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .sl-graduate-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+      color: var(--gold);
+      background: rgba(213, 170, 100, 0.12);
+      border: 1px solid rgba(213, 170, 100, 0.32);
+    }
+    .sl-graduate-tag--soon {
+      color: var(--cyan);
+      background: rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.28);
+    }
+    .sl-graduate h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .sl-graduate-meta { font-size: 0.875rem; color: var(--gold); margin-bottom: 0.65rem; font-weight: 600; }
+    .sl-graduate p { font-size: 0.9875rem; color: var(--text-2); flex: 1; }
+    .sl-graduate-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .sl-graduate-link:hover { color: var(--cyan); text-decoration: underline; }
+    .sl-graduate-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    .sl-graduates-note {
+      margin-top: 1.75rem;
+      padding: 1.15rem 1.35rem;
+      font-size: 0.9875rem;
+      color: var(--text-2);
+      text-align: center;
+      border-radius: var(--radius);
+      border: 1px dashed rgba(96, 165, 250, 0.28);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .sl-graduates-note a { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -253,6 +361,7 @@
           <li><a href="#practice">Практика</a></li>
           <li><a href="#program">Программа</a></li>
           <li><a href="#audience">Для кого</a></li>
+          <li><a href="#graduates">Выпускники</a></li>
           <li><a href="#pricing">Стоимость</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -269,6 +378,7 @@
         <li><a href="#practice">Практика</a></li>
         <li><a href="#program">Программа</a></li>
         <li><a href="#audience">Для кого</a></li>
+        <li><a href="#graduates">Выпускники</a></li>
         <li><a href="#pricing">Стоимость</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="/">Expert Sites — услуги</a></li>
@@ -425,6 +535,53 @@
           <li>Показывать четыре проекта в портфолио</li>
           <li>Продавать создание сайтов как отдельную услугу</li>
         </ul>
+      </section>
+
+      <section class="sl-section sl-wrap sl-reveal" id="graduates" aria-labelledby="graduates-title">
+        <div class="sl-eyebrow">Выпускники</div>
+        <h2 class="sl-h2" id="graduates-title">Мои выпускники</h2>
+        <p class="sl-lead">Участники SITE LAB, которые прошли обучение и создали свои сайты — для себя или для клиентов. Здесь публикуются примеры их работ с описанием проектов.</p>
+
+        <div class="sl-graduates-grid">
+          <!--
+            Шаблон карточки выпускника (скопируйте блок article и заполните):
+            <article class="sl-graduate sl-glass">
+              <div class="sl-graduate-preview" aria-hidden="true"><span class="sl-graduate-preview-label">Сайт выпускника</span></div>
+              <div class="sl-graduate-body">
+                <span class="sl-graduate-tag">Поток 1</span>
+                <h3>Имя выпускника</h3>
+                <p class="sl-graduate-meta">Ниша · тип сайта</p>
+                <p>Кратко о проекте: что сделали за время обучения.</p>
+                <a class="sl-graduate-link" href="https://example.ru/" target="_blank" rel="noopener noreferrer">Открыть сайт →</a>
+              </div>
+            </article>
+          -->
+          <article class="sl-graduate sl-glass">
+            <div class="sl-graduate-preview" aria-hidden="true">
+              <span class="sl-graduate-preview-label">Пример работы</span>
+            </div>
+            <div class="sl-graduate-body">
+              <span class="sl-graduate-tag sl-graduate-tag--soon">Поток 1 · старт 9 сентября</span>
+              <h3>Работы выпускников появятся здесь</h3>
+              <p>После завершения первого потока опубликуем сайты участников: визитки, лендинги и многостраничные проекты, созданные во время программы под сопровождением.</p>
+            </div>
+          </article>
+          <article class="sl-graduate sl-glass">
+            <div class="sl-graduate-preview" aria-hidden="true">
+              <span class="sl-graduate-preview-label">Формат карточки</span>
+            </div>
+            <div class="sl-graduate-body">
+              <span class="sl-graduate-tag">Как это будет выглядеть</span>
+              <h3>Имя, ниша и ссылка на сайт</h3>
+              <p class="sl-graduate-meta">Например: коуч · сайт-визитка</p>
+              <p>У каждого выпускника — карточка с типом проекта, кратким описанием и кнопкой «Открыть сайт».</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="sl-graduates-note">
+          Пока готовится первый поток — посмотрите <a href="/kejsy/">кейсы Expert Sites</a>: реальные сайты, созданные автором программы для экспертов.
+        </p>
       </section>
 
       <section class="sl-section sl-wrap sl-reveal" id="author">
